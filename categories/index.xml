@@ -6,9 +6,28 @@
     <description>Recent content in Categories on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://93wilsonlu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://93wilsonlu.github.io/categories/c&#43;&#43;/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/categories/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://93wilsonlu.github.io/categories/markdown/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/categories/markdown/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

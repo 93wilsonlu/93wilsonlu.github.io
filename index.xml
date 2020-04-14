@@ -6,9 +6,281 @@
     <description>Recent content on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://93wilsonlu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>淺談 C&#43;&#43; 的 IO</title>
+      <link>https://93wilsonlu.github.io/post/cplusplus-io/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/cplusplus-io/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://93wilsonlu.github.io/about/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/about/</guid>
+      
+        <description>&lt;p&gt;我是山羊&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>常用 Latex</title>
+      <link>https://93wilsonlu.github.io/post/commonly-used-latex/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/commonly-used-latex/</guid>
+      
+        <description>&lt;p&gt;這裡列出了一些常用 Latex 技巧&lt;/p&gt;
+&lt;p&gt;放上一個範例&lt;/p&gt;
+&lt;p&gt;$$
+v=v_0+at\\ 
+x=x_0+v_0t+\dfrac{1}{2}at^2 \\ 
+v^2=v_0^2+2a(x-x_0)
+$$&lt;/p&gt;
+&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
+&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
+&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
+&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
+&lt;h2 id=&#34;附加符號&#34;&gt;附加符號&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;x_0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$x_0$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;x^2&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$x^2$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\dfrac{1}{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\dfrac{1}{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\tfrac{1}{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\tfrac{1}{x}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\sqrt{2}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\sqrt{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\sqrt[y]{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\sqrt[y]{x}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\vec{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\vec{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\hat{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\hat{x}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\ddot{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\ddot{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\dot{x}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\dot{x}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;60^\omicron&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$60^\omicron$$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;特殊符號&#34;&gt;特殊符號&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\Delta&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\Delta$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\delta&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\delta$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\theta&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\theta$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\omega&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\omega$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\pi&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\pi$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\alpha&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\alpha$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\beta&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\beta$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\gamma&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\gamma$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\ &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\ $$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\%&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\%$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\infty&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\infty$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\ldots&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\ldots$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;運算&#34;&gt;運算&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\sin x&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\sin x$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\lim_{x\to 0}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\lim_{x\to 0}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\log_y x&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$log_y x$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\times&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\times$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\div&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\div$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\bullet&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\bullet$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\sum_{i=1}^n a_i&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\sum_{i=1}^n a_i$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\int_{a}^{b} 2x\ dx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\int_{a}^{b} 2x\ dx$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;關係&#34;&gt;關係&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$=$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\ne&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\ne$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$&amp;gt;$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$&amp;lt;$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\ge&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\ge$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\leq&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\leq$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\approx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\approx$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\equiv&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\equiv$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\pmod{m}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\pmod{m}$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;a \bmod b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$a \bmod b$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\in&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\in$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\subset&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\subset$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\because&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\because$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\therefore&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\therefore$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\rightharpoonup&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\rightharpoonup$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\leftharpoondown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\leftharpoondown$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\Rightarrow&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$	\Rightarrow$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\Leftrightarrow&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\Leftrightarrow$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\propto&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\propto$$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\perp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\perp$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;代碼&lt;/th&gt;
+&lt;th&gt;顯示結果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\begin{cases}x=2y\\x+y=6\end{cases}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\begin{cases}x=2y \\ x+y=6\end{cases}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;\underbrace{a_1+\ldots+a_n} \\ n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;$$\underbrace{a_1+\ldots+a_n} \\ n$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+      
+    </item>
     
   </channel>
 </rss>
