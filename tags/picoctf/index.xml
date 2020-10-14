@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>picoCTF on 山羊的部落格</title>
+    <link>https://93wilsonlu.github.io/tags/picoctf/</link>
+    <description>Recent content in picoCTF on 山羊的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://93wilsonlu.github.io/tags/picoctf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>picoCTF2020-Guessing-Game-1</title>
+      <link>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</guid>
+      <description>這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不</description>
+    </item>
+    
+  </channel>
+</rss>

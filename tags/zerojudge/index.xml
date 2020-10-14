@@ -17,7 +17,7 @@
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
-      <description>e325 基本題-小崴的IO優化挑戰 先附上網址 https://zerojudge.tw/ShowProblem?problemid=e295 題目簡單來書就是非常快的輸出 a+b 有種東西叫 getchar_unlocked 和 putchar_unlocked，雖然不太安全，但速度比</description>
+      <description>e325 基本題-小崴的IO優化挑戰 先附上網址 https://zerojudge.tw/ShowProblem?problemid=e295 題目簡單來說就是非常快的輸出 a+b 有種東西叫 getchar_unlocked 和 putchar_unlocked，雖然不太安全，但速度比</description>
     </item>
     
   </channel>

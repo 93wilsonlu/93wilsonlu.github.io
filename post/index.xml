@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>picoCTF2020-Guessing-Game-1</title>
+      <link>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</guid>
+      <description>這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不</description>
+    </item>
     
     <item>
       <title>e325 基本題-小崴的IO優化挑戰</title>
@@ -17,7 +26,7 @@
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
-      <description>e325 基本題-小崴的IO優化挑戰 先附上網址 https://zerojudge.tw/ShowProblem?problemid=e295 題目簡單來書就是非常快的輸出 a+b 有種東西叫 getchar_unlocked 和 putchar_unlocked，雖然不太安全，但速度比</description>
+      <description>e325 基本題-小崴的IO優化挑戰 先附上網址 https://zerojudge.tw/ShowProblem?problemid=e295 題目簡單來說就是非常快的輸出 a+b 有種東西叫 getchar_unlocked 和 putchar_unlocked，雖然不太安全，但速度比</description>
     </item>
     
     <item>
@@ -27,6 +36,15 @@
       
       <guid>https://93wilsonlu.github.io/post/commonly-used-latex/</guid>
       <description>這裡列出了一些常用 Latex 技巧 放上一個範例 $$ v=v_0+at\\ x=x_0+v_0t+\dfrac{1}{2}at^2 \\ v^2=v_0^2+2a(x-x_0) $$ 請記得前後都要加上$符號 請記得前後都要加上$符號 請記得前後都要加上$符號 請記得前後都要加上$</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://93wilsonlu.github.io/post/c110-uva-00311-packets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/c110-uva-00311-packets/</guid>
+      <description></description>
     </item>
     
   </channel>
