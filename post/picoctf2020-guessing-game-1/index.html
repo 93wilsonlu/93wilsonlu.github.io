@@ -69,7 +69,7 @@
 <meta itemprop="description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不">
 <meta itemprop="datePublished" content="2020-10-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="735">
+<meta itemprop="wordCount" content="743">
 
 
 
@@ -428,14 +428,17 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p>輸入用 <code>fgets</code>，沒有 Buffer Overflow</p>
-<p>但<code>rand</code> 沒有初始化，它的值一直是固定的</p>
-<p>用 gdb 可以很快找到<code>ans</code>的值</p>
+<p>但 <code>rand</code> 沒有初始化，它的值一直是固定的</p>
+<p>用 gdb 可以很快找到 <code>ans</code> 的值</p>
 <p><img src="/img/picoCTF2020-Guessing-Game-1/random_num.png" alt="">
 <code>ans</code> 固定為 <code>84</code></p>
+<blockquote>
+<p>補注: 截圖沒有截到 <code>rax</code>，但是 <code>rax</code> 應是 84</p>
+</blockquote>
 <p>可以進到 <code>win</code> 裡面了
 <img src="/img/picoCTF2020-Guessing-Game-1/access_first_level.png" alt=""></p>
 <h2 id="決定攻擊手法">決定攻擊手法</h2>
-<p><code>win</code> 裡面有Buffer Overflow，明明<code>BUFSIZE</code>只有100，卻可以填360個字元</p>
+<p><code>win</code> 裡面有Buffer Overflow，明明 <code>BUFSIZE</code> 只有100，卻可以填360個字元</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -721,7 +724,7 @@ printf 看起來不能利用</li>
 
     </a>
   
-    <a href="https://www.facebook.com/93wilisonlu" rel="me noopener" class="iconfont"
+    <a href="https://www.facebook.com/93wilsonlu" rel="me noopener" class="iconfont"
       title="facebook"  target="_blank"
       >
       <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
@@ -767,7 +770,9 @@ printf 看起來不能利用</li>
 
   <span class="copyright-year">
     &copy;
-    2020
+    
+      2020 -
+    2021
     <span class="heart">
       
       <i class="iconfont">

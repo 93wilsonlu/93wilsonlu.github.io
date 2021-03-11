@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 山羊的部落格</title>
+    <link>https://93wilsonlu.github.io/categories/python/</link>
+    <description>Recent content in Python on 山羊的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://93wilsonlu.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在固定時間打開網頁</title>
+      <link>https://93wilsonlu.github.io/post/open-website-on-time/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/open-website-on-time/</guid>
+      <description>在固定時間打開網頁 原本打算每天晚上念一個小時英文，但是常常忘記，或是正在打比賽之類。 所以我想說如果能定時打開念英文的網頁，是不是就能提升念英</description>
+    </item>
+    
+  </channel>
+</rss>

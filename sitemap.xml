@@ -86,6 +86,20 @@
   </url>
   
   <url>
+    <loc>https://93wilsonlu.github.io/tags/python/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/categories/python/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://93wilsonlu.github.io/tags/zerojudge/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,6 +108,13 @@
   
   <url>
     <loc>https://93wilsonlu.github.io/categories/zerojudge/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/post/open-website-on-time/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -144,12 +165,6 @@
   <url>
     <loc>https://93wilsonlu.github.io/portfolio/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://93wilsonlu.github.io/post/c110-uva-00311-packets/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>
   
 </urlset>
