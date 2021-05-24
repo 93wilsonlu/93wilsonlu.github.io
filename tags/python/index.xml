@@ -6,17 +6,13 @@
     <description>Recent content in Python on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://93wilsonlu.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在固定時間打開網頁</title>
-      <link>https://93wilsonlu.github.io/post/open-website-on-time/</link>
+      <link>https://93wilsonlu.github.io/post/%E5%9C%A8%E5%9B%BA%E5%AE%9A%E6%99%82%E9%96%93%E6%89%93%E9%96%8B%E7%B6%B2%E9%A0%81/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/open-website-on-time/</guid>
+      <guid>https://93wilsonlu.github.io/post/%E5%9C%A8%E5%9B%BA%E5%AE%9A%E6%99%82%E9%96%93%E6%89%93%E9%96%8B%E7%B6%B2%E9%A0%81/</guid>
       <description>在固定時間打開網頁 原本打算每天晚上念一個小時英文，但是常常忘記，或是正在打比賽之類。 所以我想說如果能定時打開念英文的網頁，是不是就能提升念英</description>
     </item>
     

@@ -6,13 +6,145 @@
     <description>Recent content on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://93wilsonlu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>picoCTF2020-Guessing-Game-1</title>
+      <title>2021 AIS3 Pre-Exam 賽後心得</title>
+      <link>https://93wilsonlu.github.io/post/2021-ais3-pre-exam-%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/2021-ais3-pre-exam-%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/</guid>
+      
+        <description>&lt;h2 id=&#34;cat-slayer-ᶠᵃᵏᵉ--nekogoroshi&#34;&gt;Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi&lt;/h2&gt;
+&lt;p&gt;打密碼，一旦打錯就會 Lock 掉。&lt;/p&gt;
+&lt;p&gt;我是直接手打，最多也就試 120 次，好像可以用 &lt;code&gt;pwntools&lt;/code&gt;，只是不知道怎麼處理不是純文字的情況。&lt;/p&gt;
+&lt;h2 id=&#34;microchip&#34;&gt;Microchip&lt;/h2&gt;
+&lt;p&gt;題目是每四個字元為一組做加密，flag 格式是 &lt;code&gt;AIS3{...}&lt;/code&gt; 可反推 key。&lt;/p&gt;
+&lt;h2 id=&#34;blind&#34;&gt;Blind&lt;/h2&gt;
+&lt;p&gt;題目會先給一個 syscall 再把 STDOUT_FILENO 關掉，最後呼叫 sh。&lt;/p&gt;
+&lt;p&gt;我們沒辦法阻止 &lt;code&gt;close(1)&lt;/code&gt; 運行，那要怎麼辦呢?&lt;/p&gt;
+&lt;p&gt;應該很多人知道 bash 中 &lt;code&gt;&amp;gt;&lt;/code&gt; 代表把資料寫到檔案，而 &lt;code&gt;2&amp;gt;&lt;/code&gt; 則是把錯誤訊息寫到檔案。&lt;/p&gt;
+&lt;p&gt;這種技巧可以套用到這題，在 &lt;a href=&#34;https://w3challs.com/syscalls/?arch=x86_64&#34;&gt;syscall&lt;/a&gt; 表可以找到 &lt;code&gt;dup2&lt;/code&gt; 函數，它的作用是將對 &lt;code&gt;new_fd&lt;/code&gt; 操作導到 &lt;code&gt;old_fd&lt;/code&gt;，也就是說，&lt;code&gt;write(new_fd, buf, sizeof(buf));&lt;/code&gt; 等同於 &lt;code&gt;write(old_fd, buf, sizeof(buf));&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在syscall 參數填入 33 2 1 0 (0x21 STDERR_FILENO STDOUT_FILENO any) 就可以拿到 flag。&lt;/p&gt;
+&lt;h2 id=&#34;microcheese&#34;&gt;Microcheese&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;遊戲規則:&lt;/strong&gt;
+有很多堆石子，每回合玩家可以選某一堆拿走一些石子，當玩家沒有任何石子可以拿的時候就輸了。&lt;/p&gt;
+&lt;p&gt;只要打敗 AI 就可以拿到 flag，但此遊戲被設計為 AI 一定能贏(具體算法我也不清楚)。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;play&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Game&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;ai_player&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AIPlayer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;win&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;False&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ended&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;print_game_menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;choice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;it&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\&amp;#39;&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;s your turn to move! what do you choose? &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;pile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;which pile do you choose? &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;how many stones do you remove? &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make_move&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;print_error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;that is not a valid move!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;continue&lt;/span&gt;
+
+        &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;game_str&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;digest&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;hash&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hexdigest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;game_str&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;encode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;you game has been saved! here is your saved game:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;game_str&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;digest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;
+
+        &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;choice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+
+        &lt;span class=&#34;c1&#34;&gt;# no move -&amp;gt; player wins!&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ended&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;win&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;print_move&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;you&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+        &lt;span class=&#34;c1&#34;&gt;# the AI plays a move&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;pile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ai_player&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_move&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;game&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make_move&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;print_move&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;win&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;print_flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;print_lose&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;server.py&lt;/code&gt; 中 &lt;code&gt;play()&lt;/code&gt; 沒有處理 &lt;code&gt;choice&lt;/code&gt; 等於其他數值的情況，後面的程式還是會被執行。&lt;/p&gt;
+&lt;p&gt;因此如果一直按 &lt;code&gt;3&lt;/code&gt; 就變成 AI 在跟自己玩，我們可以按到剩一堆石子再拿它。&lt;/p&gt;
+&lt;p&gt;第一次操作的時候必須先隨便拿一顆石子，不然 &lt;code&gt;print_move(&#39;you&#39;, count, pile)&lt;/code&gt; 的時候 &lt;code&gt;count&lt;/code&gt; 和 &lt;code&gt;pile&lt;/code&gt; 還沒被定義。&lt;/p&gt;
+&lt;h1 id=&#34;心得&#34;&gt;心得&lt;/h1&gt;
+&lt;p&gt;開始之前我原本想說也許可以寫三題 Pwn 兩題 Web，Misc 就盡量 google，Reverse 和 Crypto 做到簡單題就好了。
+結果在賽中完全被打敗，跟去年題目不是同一個等級。&lt;/p&gt;
+&lt;p&gt;我打 Write Me 時有買 hint，它只有寫&amp;quot;懶惰綁定&amp;quot;四個字，執行檔叫 gotplt 就算不懂的人也會去查吧。不能改 plt 而且改 got 會被蓋到我也沒有解出來。&lt;/p&gt;
+&lt;p&gt;晚上睡覺還會夢見自己在看 Wireshark。&lt;/p&gt;
+&lt;p&gt;還是有許多很厲害或我之前忽略的題目，例如 Yet Another Login Page 沒有想到利用 json 做 injection，明明有想過 None 等於什麼是 True，就差一點點&amp;hellip;&lt;/p&gt;
+&lt;p&gt;官網說共錄取 150 人備取 30 人，但過去好幾年都超過著個數字，不知道能不能上，臨時抱佛腳沒上也不意外就是了。&lt;/p&gt;
+&lt;p&gt;很棒的比賽，不管看考古或今年都能發現很多有趣的新事物。&lt;/p&gt;
+&lt;p&gt;明年再加油吧!&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>picoCTF2020 Guessing Game 1</title>
       <link>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</link>
       <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
@@ -21,7 +153,7 @@
         <description>&lt;p&gt;這題目花了我好幾個小時&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://play.picoctf.org/events/3/challenges/challenge/90&#34;&gt;https://play.picoctf.org/events/3/challenges/challenge/90&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;開始&#34;&gt;開始&lt;/h2&gt;
-&lt;p&gt;我們先看看Makefile&lt;/p&gt;
+&lt;p&gt;我們先看看 Makefile&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -107,7 +239,7 @@
 &lt;p&gt;可以進到 &lt;code&gt;win&lt;/code&gt; 裡面了
 &lt;img src=&#34;https://93wilsonlu.github.io/img/picoCTF2020-Guessing-Game-1/access_first_level.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;決定攻擊手法&#34;&gt;決定攻擊手法&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;win&lt;/code&gt; 裡面有Buffer Overflow，明明 &lt;code&gt;BUFSIZE&lt;/code&gt; 只有100，卻可以填360個字元&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;win&lt;/code&gt; 裡面有 Buffer Overflow，明明 &lt;code&gt;BUFSIZE&lt;/code&gt; 只有 100，卻可以填 360 個字元&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -181,18 +313,18 @@ printf 看起來不能利用&lt;/li&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;rcx 找不到適合的 gadget，只好先不理它，反正它常常是0&lt;/p&gt;
+&lt;p&gt;rcx 找不到適合的 gadget，只好先不理它，反正它常常是 0&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;想知道更多system call用法，可以到這個網站
+&lt;p&gt;想知道更多 system call 用法，可以到這個網站
 &lt;a href=&#34;https://syscalls.w3challs.com/?arch=x86&#34;&gt;https://syscalls.w3challs.com/?arch=x86&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;暫存器尺寸&#34;&gt;暫存器尺寸&lt;/h2&gt;
 &lt;p&gt;原本以為沒事了，沒想到&amp;hellip;
 &lt;img src=&#34;https://93wilsonlu.github.io/img/picoCTF2020-Guessing-Game-1/reg_size_problem.png&#34; alt=&#34;&#34;&gt;
 輸入的資料會黏在一起&lt;/p&gt;
-&lt;p&gt;我們輸入的是 32-bit，但卻用64-bit的暫存器，所以必須在資料後面加上4個&lt;code&gt;\x00&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;如果你用flat，可以在每個指令後面都加入一個0&lt;/p&gt;
+&lt;p&gt;我們輸入的是 32-bit，但卻用 64-bit 的暫存器，所以必須在資料後面加上 4 個&lt;code&gt;\x00&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果你用 flat，可以在每個指令後面都加入一個 0&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -256,7 +388,7 @@ printf 看起來不能利用&lt;/li&gt;
 &lt;span class=&#34;n&#34;&gt;int_0x80&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x468fea&lt;/span&gt;
 
 &lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;120&lt;/span&gt;
-&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pop_rax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pop_rdx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/bin&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mov_drax_edx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pop_rax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pop_rdx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/bin&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mov_drax_edx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
                  &lt;span class=&#34;n&#34;&gt;pop_rax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pop_rdx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/sh&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x00&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mov_drax_edx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pop_rbx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; \
                  &lt;span class=&#34;n&#34;&gt;pop_rax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pop_rdx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;int_0x80&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
@@ -282,7 +414,7 @@ printf 看起來不能利用&lt;/li&gt;
       
       <guid>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
       
-        <description>&lt;h1 id=&#34;e325-基本題-小崴的io優化挑戰&#34;&gt;e325 基本題-小崴的IO優化挑戰&lt;/h1&gt;
+        <description>&lt;h1 id=&#34;e325-基本題-小崴的-io-優化挑戰&#34;&gt;e325 基本題-小崴的 IO 優化挑戰&lt;/h1&gt;
 &lt;p&gt;先附上網址 &lt;a href=&#34;https://zerojudge.tw/ShowProblem?problemid=e295&#34;&gt;https://zerojudge.tw/ShowProblem?problemid=e295&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;題目簡單來說就是非常快的輸出 a+b&lt;/p&gt;
 &lt;p&gt;有種東西叫 &lt;code&gt;getchar_unlocked&lt;/code&gt; 和 &lt;code&gt;putchar_unlocked&lt;/code&gt;，雖然不太安全，但速度比 scanf 快很多&lt;/p&gt;
@@ -473,10 +605,10 @@ printf 看起來不能利用&lt;/li&gt;
     
     <item>
       <title>在固定時間打開網頁</title>
-      <link>https://93wilsonlu.github.io/post/open-website-on-time/</link>
+      <link>https://93wilsonlu.github.io/post/%E5%9C%A8%E5%9B%BA%E5%AE%9A%E6%99%82%E9%96%93%E6%89%93%E9%96%8B%E7%B6%B2%E9%A0%81/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/open-website-on-time/</guid>
+      <guid>https://93wilsonlu.github.io/post/%E5%9C%A8%E5%9B%BA%E5%AE%9A%E6%99%82%E9%96%93%E6%89%93%E9%96%8B%E7%B6%B2%E9%A0%81/</guid>
       
         <description>&lt;h1 id=&#34;在固定時間打開網頁&#34;&gt;在固定時間打開網頁&lt;/h1&gt;
 &lt;p&gt;原本打算每天晚上念一個小時英文，但是常常忘記，或是正在打比賽之類。&lt;/p&gt;
@@ -533,22 +665,18 @@ printf 看起來不能利用&lt;/li&gt;
     
     <item>
       <title>常用 Latex</title>
-      <link>https://93wilsonlu.github.io/post/commonly-used-latex/</link>
+      <link>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</link>
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/commonly-used-latex/</guid>
+      <guid>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</guid>
       
         <description>&lt;p&gt;這裡列出了一些常用 Latex 技巧&lt;/p&gt;
 &lt;p&gt;放上一個範例&lt;/p&gt;
 &lt;p&gt;$$
-v=v_0+at\\ 
-x=x_0+v_0t+\dfrac{1}{2}at^2 \\ 
+v=v_0+at\&lt;br&gt;
+x=x_0+v_0t+\dfrac{1}{2}at^2 \&lt;br&gt;
 v^2=v_0^2+2a(x-x_0)
 $$&lt;/p&gt;
-&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
-&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
-&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
-&lt;p&gt;請記得前後都要加上&lt;code&gt;$&lt;/code&gt;符號&lt;/p&gt;
 &lt;h2 id=&#34;附加符號&#34;&gt;附加符號&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -745,7 +873,7 @@ $$&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\Rightarrow&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$	\Rightarrow$$&lt;/td&gt;
+&lt;td&gt;$$ \Rightarrow$$&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\Leftrightarrow&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;$$\Leftrightarrow$$&lt;/td&gt;
 &lt;/tr&gt;
