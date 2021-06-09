@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Topical Sort on 山羊的部落格</title>
+    <link>https://93wilsonlu.github.io/tags/topical-sort/</link>
+    <description>Recent content in Topical Sort on 山羊的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/tags/topical-sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codeforces 1385E</title>
+      <link>https://93wilsonlu.github.io/post/codeforces-1385e/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/codeforces-1385e/</guid>
+      <description>給定一個有向和無向邊的圖，將無向邊定向並避免產生環，最後輸出圖。 拓樸排序，不考慮無向邊，排出點的順序後就能將邊定向了。 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
+  </channel>
+</rss>

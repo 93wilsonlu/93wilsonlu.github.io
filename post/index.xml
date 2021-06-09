@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codeforces 1385E</title>
+      <link>https://93wilsonlu.github.io/post/codeforces-1385e/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/codeforces-1385e/</guid>
+      <description>給定一個有向和無向邊的圖，將無向邊定向並避免產生環，最後輸出圖。 拓樸排序，不考慮無向邊，排出點的順序後就能將邊定向了。 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
     <item>
       <title>2021 AIS3 Pre-Exam 賽後心得</title>
       <link>https://93wilsonlu.github.io/post/2021-ais3-pre-exam-%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/</link>
