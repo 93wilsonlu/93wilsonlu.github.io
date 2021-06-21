@@ -6,10 +6,39 @@
     <description>Recent content on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://93wilsonlu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSAcademy Perm Matrix</title>
+      <link>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
+      
+        <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
+&lt;p&gt;給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字&lt;/p&gt;
+&lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
+&lt;p&gt;每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。&lt;/p&gt;
+&lt;p&gt;選在上下兩行出現最多次的數字 $$X$$，和上行某個不與它相等的數字 $$Y$$，匹配 $$board_{i,j}(=X)$$ 和 $$board_{i-1,k}(=Y)$$。&lt;/p&gt;
+&lt;p&gt;重複 $$M$$ 次。&lt;/p&gt;
+&lt;h1 id=&#34;證明&#34;&gt;證明&lt;/h1&gt;
+&lt;p&gt;令某數 $$a$$ 在上下行出現次數為 $$b$$。&lt;/p&gt;
+&lt;p&gt;如果這方法不可行，代表原本出現次數 $$b&amp;lt;M$$，經過襙作後 $$b&amp;gt;M$$。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果一次操作選中 $$a$$ 和另一個數字，$$b$$ 和 $$M$$ 同減一，$$b&amp;lt;M$$。&lt;/li&gt;
+&lt;li&gt;如果一次操作沒選中 $$a$$，操作完 $$M-=1$$，這時 $$b&amp;gt;M$$ 的話代表操作前 $$b&amp;gt;M-1$$ 也就是 $$b&amp;gt;=M$$。
+可是 $$b&amp;gt;=M$$ 選操作數字時一定會選到 $$a$$，因為沒有其他出現更多次的數字。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以這方法一定可以得到解。&lt;/p&gt;
+&lt;h1 id=&#34;程式&#34;&gt;程式&lt;/h1&gt;
+&lt;p&gt;可用 &lt;code&gt;priority_queue&lt;/code&gt; 找出現最多次的數字 $$X$$，和排序後 &lt;code&gt;deque&lt;/code&gt; 找可匹配數字 $$Y$$&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://csacademy.com/submission/3164101/&#34;&gt;https://csacademy.com/submission/3164101/&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>Codeforces 1385E</title>
@@ -806,8 +835,12 @@ printf 看起來不能利用&lt;/li&gt;
         <description>&lt;p&gt;這裡列出了一些常用 Latex 技巧&lt;/p&gt;
 &lt;p&gt;放上一個範例&lt;/p&gt;
 &lt;p&gt;$$
-v=v_0+at\&lt;br&gt;
-x=x_0+v_0t+\dfrac{1}{2}at^2 \&lt;br&gt;
+v=v_0+at
+$$&lt;/p&gt;
+&lt;p&gt;$$
+x=x_0+v_0t+\dfrac{1}{2}at^2
+$$&lt;/p&gt;
+&lt;p&gt;$$
 v^2=v_0^2+2a(x-x_0)
 $$&lt;/p&gt;
 &lt;h2 id=&#34;附加符號&#34;&gt;附加符號&lt;/h2&gt;

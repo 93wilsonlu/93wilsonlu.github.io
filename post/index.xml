@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSAcademy Perm Matrix</title>
+      <link>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
+      <description>題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選</description>
+    </item>
+    
     <item>
       <title>Codeforces 1385E</title>
       <link>https://93wilsonlu.github.io/post/codeforces-1385e/</link>
@@ -58,7 +67,7 @@
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</guid>
-      <description>這裡列出了一些常用 Latex 技巧 放上一個範例 $$ v=v_0+at\ x=x_0+v_0t+\dfrac{1}{2}at^2 \ v^2=v_0^2+2a(x-x_0) $$ 附加符號 代碼 顯示結果 代碼 顯示結果 x_0 $$x_0$$ x^2 $$x^2$$ \dfrac{1}{x} $$\dfrac{1}{x}$$ \tfrac{1}{x} $$\tfrac{1}{x}$$ \sqrt{2} $$\sqrt{x}$$ \sqrt[y]{x} $$\sqrt[y]{x}$$ \vec{x} $$\vec{x}$$ \hat{x} $$\hat{x}$$ \ddot{x} $$\ddot{x}$$ \dot{x} $$\dot{x}$$ 60^\omicron $$60^\omicron$$ 特殊符號 代碼 顯示</description>
+      <description>這裡列出了一些常用 Latex 技巧 放上一個範例 $$ v=v_0+at $$ $$ x=x_0+v_0t+\dfrac{1}{2}at^2 $$ $$ v^2=v_0^2+2a(x-x_0) $$ 附加符號 代碼 顯示結果 代碼 顯示結果 x_0 $$x_0$$ x^2 $$x^2$$ \dfrac{1}{x} $$\dfrac{1}{x}$$ \tfrac{1}{x} $$\tfrac{1}{x}$$ \sqrt{2} $$\sqrt{x}$$ \sqrt[y]{x} $$\sqrt[y]{x}$$ \vec{x} $$\vec{x}$$ \hat{x} $$\hat{x}$$ \ddot{x} $$\ddot{x}$$ \dot{x} $$\dot{x}$$ 60^\omicron $$60^\omicron$$ 特殊符號 代</description>
     </item>
     
   </channel>

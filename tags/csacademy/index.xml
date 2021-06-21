@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSAcademy on 山羊的部落格</title>
+    <link>https://93wilsonlu.github.io/tags/csacademy/</link>
+    <description>Recent content in CSAcademy on 山羊的部落格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/tags/csacademy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSAcademy Perm Matrix</title>
+      <link>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
+      <description>題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選</description>
+    </item>
+    
+  </channel>
+</rss>
