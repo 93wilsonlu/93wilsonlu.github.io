@@ -198,13 +198,6 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/about/</loc>
-    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://93wilsonlu.github.io/tags/latex/</loc>
     <lastmod>2020-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -227,6 +220,13 @@
   
   <url>
     <loc>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</loc>
+    <lastmod>2020-03-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/about/</loc>
     <lastmod>2020-03-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

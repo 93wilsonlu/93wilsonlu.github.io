@@ -814,18 +814,6 @@ printf 看起來不能利用&lt;/li&gt;
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://93wilsonlu.github.io/about/</link>
-      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://93wilsonlu.github.io/about/</guid>
-      
-        <description>&lt;p&gt;我是山羊&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>常用 Latex</title>
       <link>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</link>
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
@@ -1069,6 +1057,26 @@ $$&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>關於我</title>
+      <link>https://93wilsonlu.github.io/about/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/about/</guid>
+      
+        <description>&lt;p&gt;姓名: 呂宣陽&lt;br&gt;
+居住地: 台中&lt;br&gt;
+經歷:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第五屆台灣好厲駭學員&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(好像沒有什麼可以說嘴的事)&lt;/p&gt;
+&lt;p&gt;一個沒沒無聞在拚 TOI 的自學生，對資訊安全也極有興趣，歡迎交朋友。&lt;br&gt;
+沒有人用山羊這個綽號叫我，如果有台灣邊緣人指數估計能在前三百名內。&lt;/p&gt;
 </description>
       
     </item>
