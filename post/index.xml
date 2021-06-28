@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Mon, 28 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CSAcademy Partial Ladder Graph</title>
+      <link>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</link>
+      <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
+      <description>題目 給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點 1 2 3 O ── O ── ... ── O | | ... | O ── O ── ... ── O 刪除一些邊使得圖依然連通，共有幾種刪</description>
+    </item>
+    
+    <item>
       <title>Keyence 2021C</title>
       <link>https://93wilsonlu.github.io/post/keyence-2021c/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
@@ -44,7 +53,7 @@
     </item>
     
     <item>
-      <title>picoCTF2020 Guessing Game 1</title>
+      <title>PicoCTF2020 Guessing Game 1</title>
       <link>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</link>
       <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       

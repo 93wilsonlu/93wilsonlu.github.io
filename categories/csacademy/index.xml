@@ -6,7 +6,16 @@
     <description>Recent content in CSAcademy on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/categories/csacademy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/categories/csacademy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSAcademy Partial Ladder Graph</title>
+      <link>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</link>
+      <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
+      <description>題目 給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點 1 2 3 O ── O ── ... ── O | | ... | O ── O ── ... ── O 刪除一些邊使得圖依然連通，共有幾種刪</description>
+    </item>
+    
     <item>
       <title>CSAcademy Perm Matrix</title>
       <link>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</link>
