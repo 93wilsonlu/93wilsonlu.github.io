@@ -13,7 +13,7 @@
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
-      <description>題目 給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點 1 2 3 O ── O ── ... ── O | | ... | O ── O ── ... ── O 刪除一些邊使得圖依然連通，共有幾種刪</description>
+      <description></description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/keyence-2021c/</guid>
-      <description>題目 給定 $$H\times W$$ 表格，每個格子可放字元 R,D,X。 有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。 對於每種可能，計算機器人從左上走到右下</description>
+      <description></description>
     </item>
     
   </channel>

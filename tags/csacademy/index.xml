@@ -13,7 +13,7 @@
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
-      <description>題目 給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點 1 2 3 O ── O ── ... ── O | | ... | O ── O ── ... ── O 刪除一些邊使得圖依然連通，共有幾種刪</description>
+      <description></description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
-      <description>題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選</description>
+      <description></description>
     </item>
     
   </channel>

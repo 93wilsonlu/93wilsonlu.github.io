@@ -13,7 +13,7 @@
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/2021-ais3-pre-exam-%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/</guid>
-      <description>Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi 打密碼，一旦打錯就會 Lock 掉。 我是直接手打，最多也就試 120 次，好像可以用 pwntools，只是不知道怎麼處理不是純文字的情況。 Microchip 題</description>
+      <description></description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</guid>
-      <description>這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看 Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got 看看 do_stuff</description>
+      <description></description>
     </item>
     
   </channel>

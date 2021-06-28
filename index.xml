@@ -83,8 +83,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;狀態 [2,3] 在 queue 的位置較狀態 [4,4] 前面。&lt;br&gt;
 因此拿到路徑後，要把剩下東西 pop 掉才能拿到最佳路徑。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;有時理所當然的事並不理所當然&lt;/strong&gt;，但想到這種 case 也太強了吧。&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;strong&gt;有時理所當然的事並不理所當然&lt;/strong&gt;，但想到這種 case 也太強了吧。&lt;/p&gt;</description>
       
     </item>
     
@@ -125,8 +124,7 @@ O ── O ── ... ── O
 &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一個狀態不能解決問題，那就兩個&lt;/strong&gt;。就算只有 0/1 也能造成很大的效果。&lt;/p&gt;
-</description>
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一個狀態不能解決問題，那就兩個&lt;/strong&gt;。就算只有 0/1 也能造成很大的效果。&lt;/p&gt;</description>
       
     </item>
     
@@ -242,8 +240,7 @@ O ── O ── ... ── O
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;重點&#34;&gt;重點&lt;/h1&gt;
-&lt;p&gt;以前都沒想過可以做這種看起來肯定超時的 dp，只要&lt;strong&gt;找到方法優化&lt;/strong&gt;就好了。&lt;/p&gt;
-</description>
+&lt;p&gt;以前都沒想過可以做這種看起來肯定超時的 dp，只要&lt;strong&gt;找到方法優化&lt;/strong&gt;就好了。&lt;/p&gt;</description>
       
     </item>
     
@@ -271,8 +268,7 @@ O ── O ── ... ── O
 &lt;p&gt;所以這方法一定可以得到解。&lt;/p&gt;
 &lt;h1 id=&#34;程式&#34;&gt;程式&lt;/h1&gt;
 &lt;p&gt;可用 &lt;code&gt;priority_queue&lt;/code&gt; 找出現最多次的數字 $$X$$，和排序後 &lt;code&gt;deque&lt;/code&gt; 找可匹配數字 $$Y$$&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://csacademy.com/submission/3164101/&#34;&gt;https://csacademy.com/submission/3164101/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;a href=&#34;https://csacademy.com/submission/3164101/&#34;&gt;https://csacademy.com/submission/3164101/&lt;/a&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -536,8 +532,7 @@ O ── O ── ... ── O
 &lt;p&gt;還是有許多很厲害或我之前忽略的題目，例如 Yet Another Login Page 沒有想到利用 json 做 injection，明明有想過 None 等於什麼是 True，就差一點點&amp;hellip;&lt;/p&gt;
 &lt;p&gt;官網說共錄取 150 人備取 30 人，但過去好幾年都超過著個數字，不知道能不能上，臨時抱佛腳沒上也不意外就是了。&lt;/p&gt;
 &lt;p&gt;很棒的比賽，不管看考古或今年都能發現很多有趣的新事物。&lt;/p&gt;
-&lt;p&gt;明年再加油吧!&lt;/p&gt;
-</description>
+&lt;p&gt;明年再加油吧!&lt;/p&gt;</description>
       
     </item>
     
@@ -800,8 +795,7 @@ printf 看起來不能利用&lt;/li&gt;
 &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://93wilsonlu.github.io/img/picoCTF2020-Guessing-Game-1/final.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://93wilsonlu.github.io/img/picoCTF2020-Guessing-Game-1/final.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -812,8 +806,7 @@ printf 看起來不能利用&lt;/li&gt;
       
       <guid>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
       
-        <description>&lt;h1 id=&#34;e325-基本題-小崴的-io-優化挑戰&#34;&gt;e325 基本題-小崴的 IO 優化挑戰&lt;/h1&gt;
-&lt;p&gt;先附上網址 &lt;a href=&#34;https://zerojudge.tw/ShowProblem?problemid=e295&#34;&gt;https://zerojudge.tw/ShowProblem?problemid=e295&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;先附上網址 &lt;a href=&#34;https://zerojudge.tw/ShowProblem?problemid=e295&#34;&gt;https://zerojudge.tw/ShowProblem?problemid=e295&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;題目簡單來說就是非常快的輸出 a+b&lt;/p&gt;
 &lt;p&gt;有種東西叫 &lt;code&gt;getchar_unlocked&lt;/code&gt; 和 &lt;code&gt;putchar_unlocked&lt;/code&gt;，雖然不太安全，但速度比 scanf 快很多&lt;/p&gt;
 &lt;p&gt;詳細介紹可以看這裡: &lt;a href=&#34;https://www.geeksforgeeks.org/getchar_unlocked-faster-input-cc-competitive-programming/&#34;&gt;https://www.geeksforgeeks.org/getchar_unlocked-faster-input-cc-competitive-programming/&lt;/a&gt;&lt;/p&gt;
@@ -996,8 +989,7 @@ printf 看起來不能利用&lt;/li&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;結束&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://93wilsonlu.github.io/img/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84IO%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/AC.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;img src=&#34;https://93wilsonlu.github.io/img/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84IO%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/AC.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -1008,8 +1000,7 @@ printf 看起來不能利用&lt;/li&gt;
       
       <guid>https://93wilsonlu.github.io/post/%E5%9C%A8%E5%9B%BA%E5%AE%9A%E6%99%82%E9%96%93%E6%89%93%E9%96%8B%E7%B6%B2%E9%A0%81/</guid>
       
-        <description>&lt;h1 id=&#34;在固定時間打開網頁&#34;&gt;在固定時間打開網頁&lt;/h1&gt;
-&lt;p&gt;原本打算每天晚上念一個小時英文，但是常常忘記，或是正在打比賽之類。&lt;/p&gt;
+        <description>&lt;p&gt;原本打算每天晚上念一個小時英文，但是常常忘記，或是正在打比賽之類。&lt;/p&gt;
 &lt;p&gt;所以我想說如果能定時打開念英文的網頁，是不是就能提升念英文的頻率?&lt;/p&gt;
 &lt;h2 id=&#34;用-python-打開網頁&#34;&gt;用 Python 打開網頁&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1044,8 +1035,7 @@ printf 看起來不能利用&lt;/li&gt;
 &lt;img src=&#34;https://93wilsonlu.github.io/img/open-website-on-time/step5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;放 exe 的位置
 &lt;img src=&#34;https://93wilsonlu.github.io/img/open-website-on-time/step6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;之後按完成就可以了&lt;/p&gt;
-</description>
+&lt;p&gt;之後按完成就可以了&lt;/p&gt;</description>
       
     </item>
     
@@ -1292,8 +1282,7 @@ $$&lt;/p&gt;
 &lt;td&gt;$$\underbrace{a_1+\ldots+a_n} \\ n$$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
+&lt;/table&gt;</description>
       
     </item>
     

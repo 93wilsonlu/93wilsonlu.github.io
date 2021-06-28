@@ -13,7 +13,7 @@
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/abc-197c/</guid>
-      <description>題目 有一張圖，每個邊上有一字元，求 1 到 N 的最短路徑，邊組成的字串必須是回文。 解法 放兩個人 $$p_1,p_2$$ 在 $$1,N$$，每次讓他們走一步，走的邊字元相等</description>
+      <description></description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
-      <description>題目 給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點 1 2 3 O ── O ── ... ── O | | ... | O ── O ── ... ── O 刪除一些邊使得圖依然連通，共有幾種刪</description>
+      <description></description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/keyence-2021c/</guid>
-      <description>題目 給定 $$H\times W$$ 表格，每個格子可放字元 R,D,X。 有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。 對於每種可能，計算機器人從左上走到右下</description>
+      <description></description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
-      <description>題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選</description>
+      <description></description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/codeforces-1385e/</guid>
-      <description>給定一個有向和無向邊的圖，將無向邊定向並避免產生環，最後輸出圖。 拓樸排序，不考慮無向邊，排出點的順序後就能將邊定向了。 1 2 3 4 5 6 7 8 9 10 11</description>
+      <description></description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/2021-ais3-pre-exam-%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/</guid>
-      <description>Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi 打密碼，一旦打錯就會 Lock 掉。 我是直接手打，最多也就試 120 次，好像可以用 pwntools，只是不知道怎麼處理不是純文字的情況。 Microchip 題</description>
+      <description></description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@
       <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/picoctf2020-guessing-game-1/</guid>
-      <description>這題目花了我好幾個小時 https://play.picoctf.org/events/3/challenges/challenge/90 開始 我們先看看 Makefile 1 2 3 4 all: gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c clean: rm vuln 這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got 看看 do_stuff</description>
+      <description></description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
-      <description>e325 基本題-小崴的 IO 優化挑戰 先附上網址 https://zerojudge.tw/ShowProblem?problemid=e295 題目簡單來說就是非常快的輸出 a+b 有種東西叫 getchar_unlocked 和 putchar_unlocked，雖然不太安全，但速度比 scanf</description>
+      <description></description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/%E5%9C%A8%E5%9B%BA%E5%AE%9A%E6%99%82%E9%96%93%E6%89%93%E9%96%8B%E7%B6%B2%E9%A0%81/</guid>
-      <description>在固定時間打開網頁 原本打算每天晚上念一個小時英文，但是常常忘記，或是正在打比賽之類。 所以我想說如果能定時打開念英文的網頁，是不是就能提升念英</description>
+      <description></description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</guid>
-      <description>這裡列出了一些常用 Latex 技巧 放上一個範例 $$ v=v_0+at $$ $$ x=x_0+v_0t+\dfrac{1}{2}at^2 $$ $$ v^2=v_0^2+2a(x-x_0) $$ 附加符號 代碼 顯示結果 代碼 顯示結果 x_0 $$x_0$$ x^2 $$x^2$$ \dfrac{1}{x} $$\dfrac{1}{x}$$ \tfrac{1}{x} $$\tfrac{1}{x}$$ \sqrt{2} $$\sqrt{x}$$ \sqrt[y]{x} $$\sqrt[y]{x}$$ \vec{x} $$\vec{x}$$ \hat{x} $$\hat{x}$$ \ddot{x} $$\ddot{x}$$ \dot{x} $$\dot{x}$$ 60^\omicron $$60^\omicron$$ 特殊符號 代</description>
+      <description></description>
     </item>
     
   </channel>
