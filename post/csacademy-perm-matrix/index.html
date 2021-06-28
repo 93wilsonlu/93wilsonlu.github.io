@@ -71,7 +71,7 @@
 <meta itemprop="name" content="CSAcademy Perm Matrix">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-06-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-06-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="376">
+<meta itemprop="wordCount" content="375">
 <meta itemprop="keywords" content="CSAcademy,Greedy," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CSAcademy Perm Matrix"/>
 <meta name="twitter:description" content=""/>
@@ -359,8 +359,8 @@ if (!doNotTrack) {
 <p>如果這方法不可行，代表原本出現次數 $$b&lt;M$$，經過襙作後 $$b&gt;M$$。</p>
 <ul>
 <li>如果一次操作選中 $$a$$ 和另一個數字，$$b$$ 和 $$M$$ 同減一，$$b&lt;M$$。</li>
-<li>如果一次操作沒選中 $$a$$，操作完 $$M-=1$$，這時 $$b&gt;M$$ 的話代表操作前 $$b&gt;M-1$$ 也就是 $$b&gt;=M$$。
-可是 $$b&gt;=M$$ 選操作數字時一定會選到 $$a$$，因為沒有其他出現更多次的數字。</li>
+<li>如果一次操作沒選中 $$a$$，操作完 $$M-=1$$，這時 $$b&gt;M$$ 的話代表操作前 $$b&gt;M-1$$ 也就是 $$b\geM$$。
+可是 $$b\ge M$$ 選操作數字時一定會選到 $$a$$，因為沒有其他出現更多次的數字。</li>
 </ul>
 <p>所以這方法一定可以得到解。</p>
 <h1 id="程式">程式</h1>
