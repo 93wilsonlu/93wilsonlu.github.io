@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CSAcademy Perm Matrix - 山羊的部落格</title>
+  <title>Keyence 2021C - 山羊的部落格</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="93wilsonlu" />
-  <meta name="description" content="題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選" />
+  <meta name="description" content="題目 給定 $$H\times W$$ 表格，每個格子可放字元 R,D,X。 有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。 對於每種可能，計算機器人從左上走到右下" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.83.1" />
 
 
-<link rel="canonical" href="https://93wilsonlu.github.io/post/csacademy-perm-matrix/" />
+<link rel="canonical" href="https://93wilsonlu.github.io/post/keyence-2021c/" />
 
 
 
@@ -61,20 +61,20 @@
 <link rel="stylesheet" href="/css/mathjax.css">
 
 
-<meta property="og:title" content="CSAcademy Perm Matrix" />
-<meta property="og:description" content="題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選" />
+<meta property="og:title" content="Keyence 2021C" />
+<meta property="og:description" content="題目 給定 $$H\times W$$ 表格，每個格子可放字元 R,D,X。 有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。 對於每種可能，計算機器人從左上走到右下" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://93wilsonlu.github.io/post/csacademy-perm-matrix/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-06-21T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-06-21T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://93wilsonlu.github.io/post/keyence-2021c/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-28T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-28T00:00:00&#43;00:00" />
 
-<meta itemprop="name" content="CSAcademy Perm Matrix">
-<meta itemprop="description" content="題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選"><meta itemprop="datePublished" content="2021-06-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-06-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="376">
-<meta itemprop="keywords" content="C&#43;&#43;,CSAcademy,Greedy," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CSAcademy Perm Matrix"/>
-<meta name="twitter:description" content="題目 給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字 解法 每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。 選"/>
+<meta itemprop="name" content="Keyence 2021C">
+<meta itemprop="description" content="題目 給定 $$H\times W$$ 表格，每個格子可放字元 R,D,X。 有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。 對於每種可能，計算機器人從左上走到右下"><meta itemprop="datePublished" content="2021-06-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="633">
+<meta itemprop="keywords" content="C&#43;&#43;,Atcoder,DP," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Keyence 2021C"/>
+<meta name="twitter:description" content="題目 給定 $$H\times W$$ 表格，每個格子可放字元 R,D,X。 有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。 對於每種可能，計算機器人從左上走到右下"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -323,14 +323,14 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">CSAcademy Perm Matrix</h1>
+      <h1 class="post-title">Keyence 2021C</h1>
       
       <div class="post-meta">
-        <time datetime="2021-06-21" class="post-time">
-          2021-06-21
+        <time datetime="2021-06-28" class="post-time">
+          2021-06-28
         </time>
         <div class="post-category">
-            <a href="https://93wilsonlu.github.io/categories/csacademy/"> CSAcademy </a>
+            <a href="https://93wilsonlu.github.io/categories/c&#43;&#43;/"> C&#43;&#43; </a>
             
           </div>
         
@@ -349,23 +349,111 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <h1 id="題目">題目</h1>
-<p>給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字</p>
-<h1 id="解法">解法</h1>
-<p>每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。</p>
-<p>選在上下兩行出現最多次的數字 $$X$$，和上行某個不與它相等的數字 $$Y$$，匹配 $$board_{i,j}(=X)$$ 和 $$board_{i-1,k}(=Y)$$。</p>
-<p>重複 $$M$$ 次。</p>
-<h1 id="證明">證明</h1>
-<p>令某數 $$a$$ 在上下行出現次數為 $$b$$。</p>
-<p>如果這方法不可行，代表原本出現次數 $$b&lt;M$$，經過襙作後 $$b&gt;M$$。</p>
+<p>給定 $$H\times W$$ 表格，每個格子可放字元 <code>R</code>,<code>D</code>,<code>X</code>。<br>
+有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。</p>
+<p>對於每種可能，計算機器人從左上走到右下的方法數，每到一個格子執行以下操作:</p>
 <ul>
-<li>如果一次操作選中 $$a$$ 和另一個數字，$$b$$ 和 $$M$$ 同減一，$$b&lt;M$$。</li>
-<li>如果一次操作沒選中 $$a$$，操作完 $$M-=1$$，這時 $$b&gt;M$$ 的話代表操作前 $$b&gt;M-1$$ 也就是 $$b&gt;=M$$。
-可是 $$b&gt;=M$$ 選操作數字時一定會選到 $$a$$，因為沒有其他出現更多次的數字。</li>
+<li>當前字元 <code>R</code> 則向右</li>
+<li>當前字元 <code>D</code> 則向下</li>
+<li>當前字元 <code>X</code> 向右向下皆可</li>
 </ul>
-<p>所以這方法一定可以得到解。</p>
-<h1 id="程式">程式</h1>
-<p>可用 <code>priority_queue</code> 找出現最多次的數字 $$X$$，和排序後 <code>deque</code> 找可匹配數字 $$Y$$</p>
-<p><a href="https://csacademy.com/submission/3164101/">https://csacademy.com/submission/3164101/</a></p>
+<p>將答案加總 mod 998244353。</p>
+<h1 id="錯誤解法">錯誤解法</h1>
+<p>一開始我只有考慮當前格子上面和左邊是不是空格，考慮上面下來的路徑，轉移式如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;R&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">tmp</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">tmp</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tmp</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%=</span> <span class="n">MOD</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>這完全是錯誤的方法，別的格子也可以對路徑出現次數造成影響，像下面情況:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">XXX
+0XX
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="正確解法">正確解法</h1>
+<p>設 $$dp_{i,j,n}$$ 表示有幾個走到位置 $$i,j$$ 且經過 $$n$$ 個空格的路徑。<br>
+要保持某個路徑，經過的空格只能變成 (<code>R</code>or<code>D</code>),<code>X</code>，不經過的空格 <code>R</code>,<code>D</code>,<code>X</code> 皆可</p>
+<p>答案 $$\textstyle\sum_{1\le k\le H+W} dp_{H,W,k}2^k3^{HW−K-k}$$<br>
+時間複雜度 $$O(HW(H+W))$$ 肯定超時。</p>
+<p>式子可以轉化成 $$3^{HW−K}\textstyle\sum_{1\le k\le H+W}dp_{H,W,k}(\frac{2}{3})^k$$<br>
+想像對於每個路徑原本權重 $$w=1$$，經過 $$n$$ 個空格則 $$w=(\frac{2}{3})^n$$ ，將所有路徑權重加起來再乘上 $$3^{HW−K}$$</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">number_2div3</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pow_mod</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">mod</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;R&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;D&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">number_2div3</span> <span class="o">*</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">number_2div3</span> <span class="o">*</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pow_mod</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">*</span> <span class="n">m</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="重點">重點</h1>
+<p>以前都沒想過可以做這種看起來肯定超時的 dp，只要<strong>找到方法優化</strong>就好了。</p>
 
     </div>
 
@@ -379,7 +467,7 @@ if (!doNotTrack) {
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2021-06-21
+      2021-06-28
       
     </span>
   </p>
@@ -397,30 +485,17 @@ if (!doNotTrack) {
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://93wilsonlu.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
-          <a href="https://93wilsonlu.github.io/tags/csacademy/">CSAcademy</a>
-          <a href="https://93wilsonlu.github.io/tags/greedy/">Greedy</a>
+          <a href="https://93wilsonlu.github.io/tags/atcoder/">Atcoder</a>
+          <a href="https://93wilsonlu.github.io/tags/dp/">DP</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/keyence-2021c/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Keyence 2021C</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/codeforces-1385e/">
-            <span class="next-text nav-default">Codeforces 1385E</span>
+          <a class="next" href="/post/csacademy-perm-matrix/">
+            <span class="next-text nav-default">CSAcademy Perm Matrix</span>
             <span class="prev-text nav-mobile">Next</span>
             
             <i class="iconfont">
@@ -458,7 +533,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "https://93wilsonlu.github.io/post/csacademy-perm-matrix/";
+      this.page.url = "https://93wilsonlu.github.io/post/keyence-2021c/";
     };
     function load_disqus() {
       
