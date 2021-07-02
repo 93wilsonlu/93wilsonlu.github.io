@@ -6,13 +6,22 @@
     <description>Recent content in Posts on 山羊的部落格</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Jul 2021 23:25:22 +0800</lastBuildDate><atom:link href="https://93wilsonlu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Atcoder ABC 197F</title>
-      <link>https://93wilsonlu.github.io/post/abc-197c/</link>
+      <title>Atcoder Beginner Contest 206E</title>
+      <link>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</link>
+      <pubDate>Fri, 02 Jul 2021 23:25:22 +0800</pubDate>
+      
+      <guid>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Atcoder Beginner Contest 197F</title>
+      <link>https://93wilsonlu.github.io/post/atcoder-beginner-contest-197c/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/abc-197c/</guid>
+      <guid>https://93wilsonlu.github.io/post/atcoder-beginner-contest-197c/</guid>
       <description></description>
     </item>
     
