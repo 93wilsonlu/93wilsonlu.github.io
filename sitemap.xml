@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</loc>
-    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
+    <loc>https://93wilsonlu.github.io/post/codeforces-1542c/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://93wilsonlu.github.io/post/</loc>
-    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://93wilsonlu.github.io/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</loc>
     <lastmod>2021-07-02T23:25:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
