@@ -19,11 +19,14 @@
       <guid>https://93wilsonlu.github.io/post/codeforces-1542c/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
-&lt;p&gt;設 $$f(i)$$ 為不是 $$i$$ 的因數中最小的數，求 $$\textstyle\sum_{i=1}^{n}f(i)$$&lt;/p&gt;
+
+&lt;p&gt;設 &lt;span  class=&#34;math&#34;&gt;\(f(i)\)&lt;/span&gt; 為不是 &lt;span  class=&#34;math&#34;&gt;\(i\)&lt;/span&gt; 的因數中最小的數，求 &lt;span  class=&#34;math&#34;&gt;\(\textstyle\sum_{i=1}^{n}f(i)\)&lt;/span&gt;&lt;/p&gt;
+
 &lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
-&lt;p&gt;直接枚舉 $$f(i)$$&lt;br&gt;
-如果 $$f(i)=k$$，$$i$$ 一定被 $$lcm(1&amp;hellip;k-1)$$ 整除，總共有 $$\frac{n}{lcm(1&amp;hellip;k-1)}$$ 數字符合&lt;br&gt;
-還要減掉 $$k$$ 更大的情況，答案為 $$\textstyle\sum_{k=1}^{m}(\frac{n}{lcm(1&amp;hellip;k-1)} - \frac{n}{lcm(1&amp;hellip;k)})k$$&lt;/p&gt;
+
+&lt;p&gt;直接枚舉 &lt;span  class=&#34;math&#34;&gt;\(f(i)\)&lt;/span&gt;&lt;br&gt;
+如果 &lt;span  class=&#34;math&#34;&gt;\(f(i)=k\)&lt;/span&gt;，&lt;span  class=&#34;math&#34;&gt;\(i\)&lt;/span&gt; 一定被 &lt;span  class=&#34;math&#34;&gt;\(lcm(1...k-1)\)&lt;/span&gt; 整除，總共有 &lt;span  class=&#34;math&#34;&gt;\(\frac{n}{lcm(1...k-1)}\)&lt;/span&gt; 數字符合&lt;br&gt;
+還要減掉 &lt;span  class=&#34;math&#34;&gt;\(k\)&lt;/span&gt; 更大的情況，答案為 &lt;span  class=&#34;math&#34;&gt;\(\textstyle\sum_{k=1}^{m}(\frac{n}{lcm(1...k-1)} - \frac{n}{lcm(1...k)})k\)&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -101,10 +104,10 @@
     &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
         &lt;span class=&#34;n&#34;&gt;solve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
     &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;比完賽後懶得簡化程式 (被打)&lt;/p&gt;</description>
+&lt;/div&gt;
+&lt;p&gt;比完賽後懶得簡化程式 (被打)&lt;/p&gt;</description>
       
     </item>
     
@@ -116,13 +119,17 @@
       <guid>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
-&lt;p&gt;計算區間內滿足以下條件數對 $$(x,y)$$ 數量:&lt;/p&gt;
+
+&lt;p&gt;計算區間內滿足以下條件數對 &lt;span  class=&#34;math&#34;&gt;\((x,y)\)&lt;/span&gt; 數量:&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;$$g=\gcd(x,y)\ne 1$$&lt;/li&gt;
-&lt;li&gt;$$\frac{x}{g}\ne 1$$&lt;/li&gt;
-&lt;li&gt;$$\frac{y}{g}\ne 1$$&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(g=\gcd(x,y)\ne 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\frac{x}{g}\ne 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\frac{y}{g}\ne 1\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
+
 &lt;p&gt;用排容原理枚舉數對的 gcd，算區間內不互質數對數量。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -157,12 +164,12 @@
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
         &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;l&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;注意對於所有 $$a$$ 滿足 $$a|b^2$$ 不要算。&lt;br&gt;
-因為像 $$2,3$$ 會對 $$6$$ 覆蓋兩次，用排容原理處理。&lt;br&gt;
-而 $$2$$ 對 $$8$$ 不會，$$8$$ 的倍數集合在 $$2$$ 的倍數集合裡，因此不用管它。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;注意對於所有 &lt;span  class=&#34;math&#34;&gt;\(a\)&lt;/span&gt; 滿足 &lt;span  class=&#34;math&#34;&gt;\(a|b^2\)&lt;/span&gt; 不要算。&lt;br&gt;
+因為像 &lt;span  class=&#34;math&#34;&gt;\(2,3\)&lt;/span&gt; 會對 &lt;span  class=&#34;math&#34;&gt;\(6\)&lt;/span&gt; 覆蓋兩次，用排容原理處理。&lt;br&gt;
+而 &lt;span  class=&#34;math&#34;&gt;\(2\)&lt;/span&gt; 對 &lt;span  class=&#34;math&#34;&gt;\(8\)&lt;/span&gt; 不會，&lt;span  class=&#34;math&#34;&gt;\(8\)&lt;/span&gt; 的倍數集合在 &lt;span  class=&#34;math&#34;&gt;\(2\)&lt;/span&gt; 的倍數集合裡，因此不用管它。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -192,10 +199,10 @@
     &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n_factors&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
         &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;最後還要處理數對 $$x|y$$ 情況&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;最後還要處理數對 &lt;span  class=&#34;math&#34;&gt;\(x|y\)&lt;/span&gt; 情況&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -205,8 +212,7 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ll&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
       
@@ -220,10 +226,13 @@
       <guid>https://93wilsonlu.github.io/post/atcoder-beginner-contest-197c/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
+
 &lt;p&gt;有一張圖，每個邊上有一字元，求 1 到 N 的最短路徑，邊組成的字串必須是回文。&lt;/p&gt;
+
 &lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
-&lt;p&gt;放兩個人 $$p_1,p_2$$ 在 $$1,N$$，每次讓他們走一步，走的邊字元相等，做 BFS。&lt;br&gt;
-假設他們在 $$u,v$$，當 $$u=v$$ 或 $$u$$ 連接 $$v$$，路徑就建出來了。&lt;br&gt;
+
+&lt;p&gt;放兩個人 &lt;span  class=&#34;math&#34;&gt;\(p_1,p_2\)&lt;/span&gt; 在 &lt;span  class=&#34;math&#34;&gt;\(1,N\)&lt;/span&gt;，每次讓他們走一步，走的邊字元相等，做 BFS。&lt;br&gt;
+假設他們在 &lt;span  class=&#34;math&#34;&gt;\(u,v\)&lt;/span&gt;，當 &lt;span  class=&#34;math&#34;&gt;\(u=v\)&lt;/span&gt; 或 &lt;span  class=&#34;math&#34;&gt;\(u\)&lt;/span&gt; 連接 &lt;span  class=&#34;math&#34;&gt;\(v\)&lt;/span&gt;，路徑就建出來了。&lt;br&gt;
 記得存狀態是否訪問過。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -266,10 +275,10 @@
             &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
         &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;這樣還是會漏一種情況:&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;這樣還是會漏一種情況:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -279,11 +288,12 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;  2 ─ 3
  /     \
-1 ─ 4 ─ 5
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+1 ─ 4 ─ 5&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;狀態 [2,3] 在 queue 的位置較狀態 [4,4] 前面。&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;狀態 [2,3] 在 queue 的位置較狀態 [4,4] 前面。&lt;br&gt;
 因此拿到路徑後，要把剩下東西 pop 掉才能拿到最佳路徑。&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;有時理所當然的事並不理所當然&lt;/strong&gt;，但想到這種 case 也太強了吧。&lt;/p&gt;</description>
       
     </item>
@@ -296,7 +306,8 @@
       <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
-&lt;p&gt;給定數字 $$N$$，組成像這樣的圖共有 $$2N$$ 個節點&lt;/p&gt;
+
+&lt;p&gt;給定數字 &lt;span  class=&#34;math&#34;&gt;\(N\)&lt;/span&gt;，組成像這樣的圖共有 &lt;span  class=&#34;math&#34;&gt;\(2N\)&lt;/span&gt; 個節點&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -306,14 +317,17 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;O ── O ── ... ── O
 |    |    ...    |
-O ── O ── ... ── O
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+O ── O ── ... ── O&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;刪除一些邊使得圖依然連通，共有幾種刪法?&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;刪除一些邊使得圖依然連通，共有幾種刪法?&lt;/p&gt;
+
 &lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
-&lt;p&gt;原本想說如果左邊連通再加兩個節點的話 $$dp_{i}=3dp_{i-1}$$&lt;br&gt;
+
+&lt;p&gt;原本想說如果左邊連通再加兩個節點的話 &lt;span  class=&#34;math&#34;&gt;\(dp_{i}=3dp_{i-1}\)&lt;/span&gt;&lt;br&gt;
 但有可能左邊原本沒連通後來加三個邊所以連通了。&lt;/p&gt;
-&lt;p&gt;設 $$dp_{i,0/1}$$ 為圖分成兩部分或連通的刪除方法數。&lt;br&gt;
+
+&lt;p&gt;設 &lt;span  class=&#34;math&#34;&gt;\(dp_{i,0/1}\)&lt;/span&gt; 為圖分成兩部分或連通的刪除方法數。&lt;br&gt;
 如果分兩部分最右邊兩節點不能在同一連通塊，否則以後不能把圖連起來了。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -322,10 +336,10 @@ O ── O ── ... ── O
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一個狀態不能解決問題，那就兩個&lt;/strong&gt;。就算只有 0/1 也能造成很大的效果。&lt;/p&gt;</description>
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;一個狀態不能解決問題，那就兩個&lt;/strong&gt;。就算只有 0/1 也能造成很大的效果。&lt;/p&gt;</description>
       
     </item>
     
@@ -337,16 +351,22 @@ O ── O ── ... ── O
       <guid>https://93wilsonlu.github.io/post/csacademy-strange-distance/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
-&lt;p&gt;有一堆點，點距離定義為 $$\min(|x_1-x_2|,|y_1-y_2|)$$，尋找第 $$K$$ 小點。&lt;/p&gt;
+
+&lt;p&gt;有一堆點，點距離定義為 &lt;span  class=&#34;math&#34;&gt;\(\min(|x_1-x_2|,|y_1-y_2|)\)&lt;/span&gt;，尋找第 &lt;span  class=&#34;math&#34;&gt;\(K\)&lt;/span&gt; 小點。&lt;/p&gt;
+
 &lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
-&lt;p&gt;如果直接暴搜 $$O(n^2)$$ 肯定超時，可以試試二分搜。&lt;/p&gt;
+
+&lt;p&gt;如果直接暴搜 &lt;span  class=&#34;math&#34;&gt;\(O(n^2)\)&lt;/span&gt; 肯定超時，可以試試二分搜。&lt;/p&gt;
+
 &lt;p&gt;&lt;code&gt;ranking&lt;/code&gt; 函數為某個距離最小排名，&lt;code&gt;1 1 2 2&lt;/code&gt; 中 2 最小排名為 3。
-計算比距離 $$d$$ 小的距離數量，分兩種情況:&lt;/p&gt;
+計算比距離 &lt;span  class=&#34;math&#34;&gt;\(d\)&lt;/span&gt; 小的距離數量，分兩種情況:&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;$$x_i-x_j&amp;lt;d$$&lt;/li&gt;
-&lt;li&gt;$$x_i-x_j\ge d\ and\ y_i-y_j&amp;lt;d$$&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(x_i-x_j&lt;d\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(x_i-x_j\ge d\ and\ y_i-y_j&lt;d\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;第一種將點排序即可，第二種在 $$x_i-x_j\ge d$$ 時將 $$y$$ 座標放進 BIT。&lt;/p&gt;
+
+&lt;p&gt;第一種將點排序即可，第二種在 &lt;span  class=&#34;math&#34;&gt;\(x_i-x_j\ge d\)&lt;/span&gt; 時將 &lt;span  class=&#34;math&#34;&gt;\(y\)&lt;/span&gt; 座標放進 BIT。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -378,10 +398,10 @@ O ── O ── ... ── O
         &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;prefixSum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;points&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dist&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;prefixSum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;points&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
     &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;算 $$A \cap B$$ 時可分為 $$A \cup (!A \cap B)$$&lt;/strong&gt;&lt;/p&gt;</description>
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;算 &lt;span  class=&#34;math&#34;&gt;\(A \cap B\)&lt;/span&gt; 時可分為 &lt;span  class=&#34;math&#34;&gt;\(A \cup (!A \cap B)\)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -393,16 +413,22 @@ O ── O ── ... ── O
       <guid>https://93wilsonlu.github.io/post/keyence-2021c/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
-&lt;p&gt;給定 $$H\times W$$ 表格，每個格子可放字元 &lt;code&gt;R&lt;/code&gt;,&lt;code&gt;D&lt;/code&gt;,&lt;code&gt;X&lt;/code&gt;。&lt;br&gt;
-有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。&lt;/p&gt;
+
+&lt;p&gt;給定 &lt;span  class=&#34;math&#34;&gt;\(H\times W\)&lt;/span&gt; 表格，每個格子可放字元 &lt;code&gt;R&lt;/code&gt;,&lt;code&gt;D&lt;/code&gt;,&lt;code&gt;X&lt;/code&gt;。&lt;br&gt;
+有 &lt;span  class=&#34;math&#34;&gt;\(K\)&lt;/span&gt; 個格子已指定好字元不可更改，因此表格總共有 &lt;span  class=&#34;math&#34;&gt;\(3^{HW-K}\)&lt;/span&gt; 種可能。&lt;/p&gt;
+
 &lt;p&gt;對於每種可能，計算機器人從左上走到右下的方法數，每到一個格子執行以下操作:&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;當前字元 &lt;code&gt;R&lt;/code&gt; 則向右&lt;/li&gt;
 &lt;li&gt;當前字元 &lt;code&gt;D&lt;/code&gt; 則向下&lt;/li&gt;
 &lt;li&gt;當前字元 &lt;code&gt;X&lt;/code&gt; 向右向下皆可&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;p&gt;將答案加總 mod 998244353。&lt;/p&gt;
+
 &lt;h1 id=&#34;錯誤解法&#34;&gt;錯誤解法&lt;/h1&gt;
+
 &lt;p&gt;一開始我只有考慮當前格子上面和左邊是不是空格，考慮上面下來的路徑，轉移式如下:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -429,10 +455,10 @@ O ── O ── ... ── O
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
     &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tmp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MOD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
     &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MOD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;這完全是錯誤的方法，別的格子也可以對路徑出現次數造成影響，像下面情況:&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;這完全是錯誤的方法，別的格子也可以對路徑出現次數造成影響，像下面情況:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -440,16 +466,19 @@ O ── O ── ... ── O
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;XXX
-0XX
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+0XX&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;正確解法&#34;&gt;正確解法&lt;/h1&gt;
-&lt;p&gt;設 $$dp_{i,j,n}$$ 表示有幾個走到位置 $$i,j$$ 且經過 $$n$$ 個空格的路徑。&lt;br&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;正確解法&#34;&gt;正確解法&lt;/h1&gt;
+
+&lt;p&gt;設 &lt;span  class=&#34;math&#34;&gt;\(dp_{i,j,n}\)&lt;/span&gt; 表示有幾個走到位置 &lt;span  class=&#34;math&#34;&gt;\(i,j\)&lt;/span&gt; 且經過 &lt;span  class=&#34;math&#34;&gt;\(n\)&lt;/span&gt; 個空格的路徑。&lt;br&gt;
 要保持某個路徑，經過的空格只能變成 (&lt;code&gt;R&lt;/code&gt;or&lt;code&gt;D&lt;/code&gt;),&lt;code&gt;X&lt;/code&gt;，不經過的空格 &lt;code&gt;R&lt;/code&gt;,&lt;code&gt;D&lt;/code&gt;,&lt;code&gt;X&lt;/code&gt; 皆可&lt;/p&gt;
-&lt;p&gt;答案 $$\textstyle\sum_{1\le k\le H+W} dp_{H,W,k}2^k3^{HW−K-k}$$&lt;br&gt;
-時間複雜度 $$O(HW(H+W))$$ 肯定超時。&lt;/p&gt;
-&lt;p&gt;式子可以轉化成 $$3^{HW−K}\textstyle\sum_{1\le k\le H+W}dp_{H,W,k}(\frac{2}{3})^k$$&lt;br&gt;
-想像對於每個路徑原本權重 $$w=1$$，經過 $$n$$ 個空格則 $$w=(\frac{2}{3})^n$$ ，將所有路徑權重加起來再乘上 $$3^{HW−K}$$&lt;/p&gt;
+
+&lt;p&gt;答案 &lt;span  class=&#34;math&#34;&gt;\(\textstyle\sum_{1\le k\le H+W} dp_{H,W,k}2^k3^{HW−K-k}\)&lt;/span&gt;&lt;br&gt;
+時間複雜度 &lt;span  class=&#34;math&#34;&gt;\(O(HW(H+W))\)&lt;/span&gt; 肯定超時。&lt;/p&gt;
+
+&lt;p&gt;式子可以轉化成 &lt;span  class=&#34;math&#34;&gt;\(3^{HW−K}\textstyle\sum_{1\le k\le H+W}dp_{H,W,k}(\frac{2}{3})^k\)&lt;/span&gt;&lt;br&gt;
+想像對於每個路徑原本權重 &lt;span  class=&#34;math&#34;&gt;\(w=1\)&lt;/span&gt;，經過 &lt;span  class=&#34;math&#34;&gt;\(n\)&lt;/span&gt; 個空格則 &lt;span  class=&#34;math&#34;&gt;\(w=(\frac{2}{3})^n\)&lt;/span&gt; ，將所有路徑權重加起來再乘上 &lt;span  class=&#34;math&#34;&gt;\(3^{HW−K}\)&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -493,10 +522,10 @@ O ── O ── ... ── O
         &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pow_mod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pow_mod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;以前都沒想過可以做這種看起來肯定超時的 dp，只要&lt;strong&gt;找到方法優化&lt;/strong&gt;就好了。&lt;/p&gt;</description>
+&lt;/div&gt;
+&lt;p&gt;以前都沒想過可以做這種看起來肯定超時的 dp，只要&lt;strong&gt;找到方法優化&lt;/strong&gt;就好了。&lt;/p&gt;</description>
       
     </item>
     
@@ -508,22 +537,35 @@ O ── O ── ... ── O
       <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
+
 &lt;p&gt;給定一個二維矩陣，更改每行數字排列使得所有數字不等於上下數字&lt;/p&gt;
+
 &lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
-&lt;p&gt;每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 $$M$$ 則無解。&lt;/p&gt;
-&lt;p&gt;選在上下兩行出現最多次的數字 $$X$$，和上行某個不與它相等的數字 $$Y$$，匹配 $$board_{i,j}(=X)$$ 和 $$board_{i-1,k}(=Y)$$。&lt;/p&gt;
-&lt;p&gt;重複 $$M$$ 次。&lt;/p&gt;
+
+&lt;p&gt;每次只考慮兩行數字，由題目可推得某個數字在這兩行出現次數大於 &lt;span  class=&#34;math&#34;&gt;\(M\)&lt;/span&gt; 則無解。&lt;/p&gt;
+
+&lt;p&gt;選在上下兩行出現最多次的數字 &lt;span  class=&#34;math&#34;&gt;\(X\)&lt;/span&gt;，和上行某個不與它相等的數字 &lt;span  class=&#34;math&#34;&gt;\(Y\)&lt;/span&gt;，匹配 &lt;span  class=&#34;math&#34;&gt;\(board_{i,j}(=X)\)&lt;/span&gt; 和 &lt;span  class=&#34;math&#34;&gt;\(board_{i-1,k}(=Y)\)&lt;/span&gt;。&lt;/p&gt;
+
+&lt;p&gt;重複 &lt;span  class=&#34;math&#34;&gt;\(M\)&lt;/span&gt; 次。&lt;/p&gt;
+
 &lt;h1 id=&#34;證明&#34;&gt;證明&lt;/h1&gt;
-&lt;p&gt;令某數 $$a$$ 在上下行出現次數為 $$b$$。&lt;/p&gt;
-&lt;p&gt;如果這方法不可行，代表原本出現次數 $$b&amp;lt;M$$，經過襙作後 $$b&amp;gt;M$$。&lt;/p&gt;
+
+&lt;p&gt;令某數 &lt;span  class=&#34;math&#34;&gt;\(a\)&lt;/span&gt; 在上下行出現次數為 &lt;span  class=&#34;math&#34;&gt;\(b\)&lt;/span&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果這方法不可行，代表原本出現次數 &lt;span  class=&#34;math&#34;&gt;\(b&lt;M\)&lt;/span&gt;，經過襙作後 &lt;span  class=&#34;math&#34;&gt;\(b&gt;M\)&lt;/span&gt;。&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;如果一次操作選中 $$a$$ 和另一個數字，$$b$$ 和 $$M$$ 同減一，$$b&amp;lt;M$$。&lt;/li&gt;
-&lt;li&gt;如果一次操作沒選中 $$a$$，操作完 $$M-=1$$，這時 $$b&amp;gt;M$$ 的話代表操作前 $$b&amp;gt;M-1$$ 也就是 $$b\geM$$。
-可是 $$b\ge M$$ 選操作數字時一定會選到 $$a$$，因為沒有其他出現更多次的數字。&lt;/li&gt;
+&lt;li&gt;如果一次操作選中 &lt;span  class=&#34;math&#34;&gt;\(a\)&lt;/span&gt; 和另一個數字，&lt;span  class=&#34;math&#34;&gt;\(b\)&lt;/span&gt; 和 &lt;span  class=&#34;math&#34;&gt;\(M\)&lt;/span&gt; 同減一，&lt;span  class=&#34;math&#34;&gt;\(b&lt;M\)&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;如果一次操作沒選中 &lt;span  class=&#34;math&#34;&gt;\(a\)&lt;/span&gt;，操作完 &lt;span  class=&#34;math&#34;&gt;\(M-=1\)&lt;/span&gt;，這時 &lt;span  class=&#34;math&#34;&gt;\(b&gt;M\)&lt;/span&gt; 的話代表操作前 &lt;span  class=&#34;math&#34;&gt;\(b&gt;M-1\)&lt;/span&gt; 也就是 &lt;span  class=&#34;math&#34;&gt;\(b\geM\)&lt;/span&gt;。
+可是 &lt;span  class=&#34;math&#34;&gt;\(b\ge M\)&lt;/span&gt; 選操作數字時一定會選到 &lt;span  class=&#34;math&#34;&gt;\(a\)&lt;/span&gt;，因為沒有其他出現更多次的數字。&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;p&gt;所以這方法一定可以得到解。&lt;/p&gt;
+
 &lt;h1 id=&#34;程式&#34;&gt;程式&lt;/h1&gt;
-&lt;p&gt;可用 &lt;code&gt;priority_queue&lt;/code&gt; 找出現最多次的數字 $$X$$，和排序後 &lt;code&gt;deque&lt;/code&gt; 找可匹配數字 $$Y$$&lt;/p&gt;
+
+&lt;p&gt;可用 &lt;code&gt;priority_queue&lt;/code&gt; 找出現最多次的數字 &lt;span  class=&#34;math&#34;&gt;\(X\)&lt;/span&gt;，和排序後 &lt;code&gt;deque&lt;/code&gt; 找可匹配數字 &lt;span  class=&#34;math&#34;&gt;\(Y\)&lt;/span&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://csacademy.com/submission/3164101/&#34;&gt;https://csacademy.com/submission/3164101/&lt;/a&gt;&lt;/p&gt;</description>
       
     </item>
@@ -1303,17 +1345,23 @@ printf 看起來不能利用&lt;/li&gt;
       <guid>https://93wilsonlu.github.io/post/%E5%B8%B8%E7%94%A8-latex/</guid>
       
         <description>&lt;p&gt;這裡列出了一些常用 Latex 技巧&lt;/p&gt;
+
 &lt;p&gt;放上一個範例&lt;/p&gt;
-&lt;p&gt;$$
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 v=v_0+at
-$$&lt;/p&gt;
-&lt;p&gt;$$
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x=x_0+v_0t+\dfrac{1}{2}at^2
-$$&lt;/p&gt;
-&lt;p&gt;$$
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 v^2=v_0^2+2a(x-x_0)
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;附加符號&#34;&gt;附加符號&lt;/h2&gt;
+
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1323,46 +1371,54 @@ $$&lt;/p&gt;
 &lt;th&gt;顯示結果&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
+
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;x_0&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$x_0$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[x_0\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;x^2&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$x^2$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[x^2\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\dfrac{1}{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\dfrac{1}{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\dfrac{1}{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\tfrac{1}{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\tfrac{1}{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\tfrac{1}{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\sqrt{2}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\sqrt{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\sqrt{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\sqrt[y]{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\sqrt[y]{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\sqrt[y]{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\vec{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\vec{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\vec{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\hat{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\hat{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\hat{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\ddot{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\ddot{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\ddot{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\dot{x}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\dot{x}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\dot{x}\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;60^\omicron&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$60^\omicron$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[60^\omicron\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 &lt;h2 id=&#34;特殊符號&#34;&gt;特殊符號&lt;/h2&gt;
+
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1372,46 +1428,54 @@ $$&lt;/p&gt;
 &lt;th&gt;顯示結果&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
+
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\Delta&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\Delta$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\Delta\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\delta&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\delta$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\delta\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\theta&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\theta$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\theta\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\omega&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\omega$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\omega\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\pi&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\pi$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\pi\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\alpha&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\alpha$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\alpha\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\beta&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\beta$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\beta\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\gamma&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\gamma$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\gamma\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;\ &lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\ $$&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\\ \]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\%&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\%$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\\%\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\infty&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\infty$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\infty\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\ldots&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\ldots$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\ldots\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 &lt;h2 id=&#34;運算&#34;&gt;運算&lt;/h2&gt;
+
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1421,34 +1485,40 @@ $$&lt;/p&gt;
 &lt;th&gt;顯示結果&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
+
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\sin x&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\sin x$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\sin x\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\lim_{x\to 0}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\lim_{x\to 0}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\lim_{x\to 0}\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\log_y x&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$log_y x$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[log_y x\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\times&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\times$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\times\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\div&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\div$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\div\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\bullet&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\bullet$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\bullet\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\sum_{i=1}^n a_i&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\sum_{i=1}^n a_i$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\sum_{i=1}^n a_i\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\int_{a}^{b} 2x\ dx&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\int_{a}^{b} 2x\ dx$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\int_{a}^{b} 2x\ dx\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 &lt;h2 id=&#34;關係&#34;&gt;關係&lt;/h2&gt;
+
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1458,69 +1528,75 @@ $$&lt;/p&gt;
 &lt;th&gt;顯示結果&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
+
 &lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;=&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$=$$&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;\ne&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\ne$$&lt;/td&gt;
-&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$&amp;gt;$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[&gt;\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$&amp;lt;$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[&lt;\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\ge&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\ge$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\ge\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\leq&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\leq$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\leq\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\approx&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\approx$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\approx\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\equiv&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\equiv$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\equiv\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\pmod{m}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\pmod{m}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\pmod{m}\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;a \bmod b&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$a \bmod b$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[a \bmod b\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\in&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\in$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\in\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\subset&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\subset$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\subset\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\because&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\because$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\because\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\therefore&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\therefore$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\therefore\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\rightharpoonup&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\rightharpoonup$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\rightharpoonup\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\leftharpoondown&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\leftharpoondown$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\leftharpoondown\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\Rightarrow&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$ \Rightarrow$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[ \Rightarrow\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\Leftrightarrow&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\Leftrightarrow$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\Leftrightarrow\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\propto&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\propto$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\propto\]&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;\perp&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\perp$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\perp\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
+&lt;/tfoot&gt;
 &lt;/table&gt;
+
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1528,14 +1604,16 @@ $$&lt;/p&gt;
 &lt;th&gt;顯示結果&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
+
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\begin{cases}x=2y\\x+y=6\end{cases}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\begin{cases}x=2y \\ x+y=6\end{cases}$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\begin{cases}x=2y \\\ x+y=6\end{cases}\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
+
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;\underbrace{a_1+\ldots+a_n} \\ n&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;$$\underbrace{a_1+\ldots+a_n} \\ n$$&lt;/td&gt;
+&lt;td&gt;&lt;span  class=&#34;math&#34;&gt;\[\underbrace{a_1+\ldots+a_n} \\\ n\]&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</description>

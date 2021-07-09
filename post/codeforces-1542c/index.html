@@ -58,8 +58,6 @@
 
 
 
-<link rel="stylesheet" href="/css/mathjax.css">
-
 
 <meta property="og:title" content="Codeforces 1542C" />
 <meta property="og:description" content="" />
@@ -346,11 +344,14 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <h1 id="題目">題目</h1>
-<p>設 $$f(i)$$ 為不是 $$i$$ 的因數中最小的數，求 $$\textstyle\sum_{i=1}^{n}f(i)$$</p>
+
+<p>設 <span  class="math">\(f(i)\)</span> 為不是 <span  class="math">\(i\)</span> 的因數中最小的數，求 <span  class="math">\(\textstyle\sum_{i=1}^{n}f(i)\)</span></p>
+
 <h1 id="解法">解法</h1>
-<p>直接枚舉 $$f(i)$$<br>
-如果 $$f(i)=k$$，$$i$$ 一定被 $$lcm(1&hellip;k-1)$$ 整除，總共有 $$\frac{n}{lcm(1&hellip;k-1)}$$ 數字符合<br>
-還要減掉 $$k$$ 更大的情況，答案為 $$\textstyle\sum_{k=1}^{m}(\frac{n}{lcm(1&hellip;k-1)} - \frac{n}{lcm(1&hellip;k)})k$$</p>
+
+<p>直接枚舉 <span  class="math">\(f(i)\)</span><br>
+如果 <span  class="math">\(f(i)=k\)</span>，<span  class="math">\(i\)</span> 一定被 <span  class="math">\(lcm(1...k-1)\)</span> 整除，總共有 <span  class="math">\(\frac{n}{lcm(1...k-1)}\)</span> 數字符合<br>
+還要減掉 <span  class="math">\(k\)</span> 更大的情況，答案為 <span  class="math">\(\textstyle\sum_{k=1}^{m}(\frac{n}{lcm(1...k-1)} - \frac{n}{lcm(1...k)})k\)</span></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -428,10 +429,10 @@ if (!doNotTrack) {
     <span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span>
         <span class="n">solve</span><span class="p">();</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p>比完賽後懶得簡化程式 (被打)</p>
+</div>
+<p>比完賽後懶得簡化程式 (被打)</p>
     </div>
 
     

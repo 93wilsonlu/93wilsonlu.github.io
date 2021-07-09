@@ -58,8 +58,6 @@
 
 
 
-<link rel="stylesheet" href="/css/mathjax.css">
-
 
 <meta property="og:title" content="CSAcademy Strange Distance" />
 <meta property="og:description" content="" />
@@ -349,16 +347,22 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <h1 id="題目">題目</h1>
-<p>有一堆點，點距離定義為 $$\min(|x_1-x_2|,|y_1-y_2|)$$，尋找第 $$K$$ 小點。</p>
+
+<p>有一堆點，點距離定義為 <span  class="math">\(\min(|x_1-x_2|,|y_1-y_2|)\)</span>，尋找第 <span  class="math">\(K\)</span> 小點。</p>
+
 <h1 id="解法">解法</h1>
-<p>如果直接暴搜 $$O(n^2)$$ 肯定超時，可以試試二分搜。</p>
+
+<p>如果直接暴搜 <span  class="math">\(O(n^2)\)</span> 肯定超時，可以試試二分搜。</p>
+
 <p><code>ranking</code> 函數為某個距離最小排名，<code>1 1 2 2</code> 中 2 最小排名為 3。
-計算比距離 $$d$$ 小的距離數量，分兩種情況:</p>
+計算比距離 <span  class="math">\(d\)</span> 小的距離數量，分兩種情況:</p>
+
 <ul>
-<li>$$x_i-x_j&lt;d$$</li>
-<li>$$x_i-x_j\ge d\ and\ y_i-y_j&lt;d$$</li>
+<li><span  class="math">\(x_i-x_j<d\)</span></li>
+<li><span  class="math">\(x_i-x_j\ge d\ and\ y_i-y_j<d\)</span></li>
 </ul>
-<p>第一種將點排序即可，第二種在 $$x_i-x_j\ge d$$ 時將 $$y$$ 座標放進 BIT。</p>
+
+<p>第一種將點排序即可，第二種在 <span  class="math">\(x_i-x_j\ge d\)</span> 時將 <span  class="math">\(y\)</span> 座標放進 BIT。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -390,10 +394,10 @@ if (!doNotTrack) {
         <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="n">prefixSum</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">+</span> <span class="n">dist</span><span class="p">)</span> <span class="o">-</span> <span class="n">prefixSum</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">-</span> <span class="n">dist</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p><strong>算 $$A \cap B$$ 時可分為 $$A \cup (!A \cap B)$$</strong></p>
+</div>
+<p><strong>算 <span  class="math">\(A \cap B\)</span> 時可分為 <span  class="math">\(A \cup (!A \cap B)\)</span></strong></p>
     </div>
 
     

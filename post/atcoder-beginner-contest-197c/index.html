@@ -58,8 +58,6 @@
 
 
 
-<link rel="stylesheet" href="/css/mathjax.css">
-
 
 <meta property="og:title" content="Atcoder Beginner Contest 197F" />
 <meta property="og:description" content="" />
@@ -349,10 +347,13 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <h1 id="題目">題目</h1>
+
 <p>有一張圖，每個邊上有一字元，求 1 到 N 的最短路徑，邊組成的字串必須是回文。</p>
+
 <h1 id="解法">解法</h1>
-<p>放兩個人 $$p_1,p_2$$ 在 $$1,N$$，每次讓他們走一步，走的邊字元相等，做 BFS。<br>
-假設他們在 $$u,v$$，當 $$u=v$$ 或 $$u$$ 連接 $$v$$，路徑就建出來了。<br>
+
+<p>放兩個人 <span  class="math">\(p_1,p_2\)</span> 在 <span  class="math">\(1,N\)</span>，每次讓他們走一步，走的邊字元相等，做 BFS。<br>
+假設他們在 <span  class="math">\(u,v\)</span>，當 <span  class="math">\(u=v\)</span> 或 <span  class="math">\(u\)</span> 連接 <span  class="math">\(v\)</span>，路徑就建出來了。<br>
 記得存狀態是否訪問過。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -395,10 +396,10 @@ if (!doNotTrack) {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p>這樣還是會漏一種情況:</p>
+</div>
+<p>這樣還是會漏一種情況:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -408,11 +409,12 @@ if (!doNotTrack) {
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">  2 ─ 3
  /     \
-1 ─ 4 ─ 5
-</code></pre></td></tr></table>
+1 ─ 4 ─ 5</code></pre></td></tr></table>
 </div>
-</div><p>狀態 [2,3] 在 queue 的位置較狀態 [4,4] 前面。<br>
+</div>
+<p>狀態 [2,3] 在 queue 的位置較狀態 [4,4] 前面。<br>
 因此拿到路徑後，要把剩下東西 pop 掉才能拿到最佳路徑。</p>
+
 <p><strong>有時理所當然的事並不理所當然</strong>，但想到這種 case 也太強了吧。</p>
     </div>
 

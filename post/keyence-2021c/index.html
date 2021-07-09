@@ -58,8 +58,6 @@
 
 
 
-<link rel="stylesheet" href="/css/mathjax.css">
-
 
 <meta property="og:title" content="Keyence 2021C" />
 <meta property="og:description" content="" />
@@ -349,16 +347,22 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <h1 id="題目">題目</h1>
-<p>給定 $$H\times W$$ 表格，每個格子可放字元 <code>R</code>,<code>D</code>,<code>X</code>。<br>
-有 $$K$$ 個格子已指定好字元不可更改，因此表格總共有 $$3^{HW-K}$$ 種可能。</p>
+
+<p>給定 <span  class="math">\(H\times W\)</span> 表格，每個格子可放字元 <code>R</code>,<code>D</code>,<code>X</code>。<br>
+有 <span  class="math">\(K\)</span> 個格子已指定好字元不可更改，因此表格總共有 <span  class="math">\(3^{HW-K}\)</span> 種可能。</p>
+
 <p>對於每種可能，計算機器人從左上走到右下的方法數，每到一個格子執行以下操作:</p>
+
 <ul>
 <li>當前字元 <code>R</code> 則向右</li>
 <li>當前字元 <code>D</code> 則向下</li>
 <li>當前字元 <code>X</code> 向右向下皆可</li>
 </ul>
+
 <p>將答案加總 mod 998244353。</p>
+
 <h1 id="錯誤解法">錯誤解法</h1>
+
 <p>一開始我只有考慮當前格子上面和左邊是不是空格，考慮上面下來的路徑，轉移式如下:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -385,10 +389,10 @@ if (!doNotTrack) {
     <span class="p">}</span>
     <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tmp</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
     <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">%=</span> <span class="n">MOD</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div><p>這完全是錯誤的方法，別的格子也可以對路徑出現次數造成影響，像下面情況:</p>
+</div>
+<p>這完全是錯誤的方法，別的格子也可以對路徑出現次數造成影響，像下面情況:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -396,16 +400,19 @@ if (!doNotTrack) {
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">XXX
-0XX
-</code></pre></td></tr></table>
+0XX</code></pre></td></tr></table>
 </div>
-</div><h1 id="正確解法">正確解法</h1>
-<p>設 $$dp_{i,j,n}$$ 表示有幾個走到位置 $$i,j$$ 且經過 $$n$$ 個空格的路徑。<br>
+</div>
+<h1 id="正確解法">正確解法</h1>
+
+<p>設 <span  class="math">\(dp_{i,j,n}\)</span> 表示有幾個走到位置 <span  class="math">\(i,j\)</span> 且經過 <span  class="math">\(n\)</span> 個空格的路徑。<br>
 要保持某個路徑，經過的空格只能變成 (<code>R</code>or<code>D</code>),<code>X</code>，不經過的空格 <code>R</code>,<code>D</code>,<code>X</code> 皆可</p>
-<p>答案 $$\textstyle\sum_{1\le k\le H+W} dp_{H,W,k}2^k3^{HW−K-k}$$<br>
-時間複雜度 $$O(HW(H+W))$$ 肯定超時。</p>
-<p>式子可以轉化成 $$3^{HW−K}\textstyle\sum_{1\le k\le H+W}dp_{H,W,k}(\frac{2}{3})^k$$<br>
-想像對於每個路徑原本權重 $$w=1$$，經過 $$n$$ 個空格則 $$w=(\frac{2}{3})^n$$ ，將所有路徑權重加起來再乘上 $$3^{HW−K}$$</p>
+
+<p>答案 <span  class="math">\(\textstyle\sum_{1\le k\le H+W} dp_{H,W,k}2^k3^{HW−K-k}\)</span><br>
+時間複雜度 <span  class="math">\(O(HW(H+W))\)</span> 肯定超時。</p>
+
+<p>式子可以轉化成 <span  class="math">\(3^{HW−K}\textstyle\sum_{1\le k\le H+W}dp_{H,W,k}(\frac{2}{3})^k\)</span><br>
+想像對於每個路徑原本權重 <span  class="math">\(w=1\)</span>，經過 <span  class="math">\(n\)</span> 個空格則 <span  class="math">\(w=(\frac{2}{3})^n\)</span> ，將所有路徑權重加起來再乘上 <span  class="math">\(3^{HW−K}\)</span></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -449,10 +456,10 @@ if (!doNotTrack) {
         <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pow_mod</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">*</span> <span class="n">m</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pow_mod</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">*</span> <span class="n">m</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
-</div><p>以前都沒想過可以做這種看起來肯定超時的 dp，只要<strong>找到方法優化</strong>就好了。</p>
+</div>
+<p>以前都沒想過可以做這種看起來肯定超時的 dp，只要<strong>找到方法優化</strong>就好了。</p>
     </div>
 
     
