@@ -2,7 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/codeforces-1542c/</loc>
+    <loc>https://93wilsonlu.github.io/categories/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/tags/codeforces/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/categories/codeforces/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/post/codeforces/1542c/</loc>
     <lastmod>2021-07-04T00:03:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -16,6 +37,13 @@
   </url>
   
   <url>
+    <loc>https://93wilsonlu.github.io/tags/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://93wilsonlu.github.io/</loc>
     <lastmod>2021-07-04T00:03:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,28 +51,42 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</loc>
-    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
+    <loc>https://93wilsonlu.github.io/tags/%E6%95%B8%E5%AD%B8/</loc>
+    <lastmod>2021-07-04T00:03:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://93wilsonlu.github.io/tags/atcoder/</loc>
-    <lastmod>2021-06-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://93wilsonlu.github.io/categories/atcoder/</loc>
-    <lastmod>2021-06-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/atcoder-beginner-contest-197c/</loc>
+    <loc>https://93wilsonlu.github.io/post/atcoder/abc-206e/</loc>
+    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/tags/%E6%8E%92%E5%AE%B9%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2021-07-02T23:25:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://93wilsonlu.github.io/post/atcoder/abc-197c/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -65,13 +107,6 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/categories/</loc>
-    <lastmod>2021-06-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://93wilsonlu.github.io/tags/csacademy/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</loc>
+    <loc>https://93wilsonlu.github.io/post/csacademy/partial-ladder-graph/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/csacademy-strange-distance/</loc>
+    <loc>https://93wilsonlu.github.io/post/csacademy/strange-distance/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -107,21 +142,14 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/keyence-2021c/</loc>
+    <loc>https://93wilsonlu.github.io/post/atcoder/keyence-2021c/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/tags/</loc>
-    <lastmod>2021-06-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</loc>
+    <loc>https://93wilsonlu.github.io/post/csacademy/perm-matrix/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -135,21 +163,7 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/tags/codeforces/</loc>
-    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://93wilsonlu.github.io/categories/codeforces/</loc>
-    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://93wilsonlu.github.io/post/codeforces-1385e/</loc>
+    <loc>https://93wilsonlu.github.io/post/codeforces/1385e/</loc>
     <lastmod>2021-06-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -219,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</loc>
+    <loc>https://93wilsonlu.github.io/post/zerojudge/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

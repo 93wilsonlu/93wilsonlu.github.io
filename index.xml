@@ -13,10 +13,10 @@
     
     <item>
       <title>Codeforces 1542C</title>
-      <link>https://93wilsonlu.github.io/post/codeforces-1542c/</link>
+      <link>https://93wilsonlu.github.io/post/codeforces/1542c/</link>
       <pubDate>Sun, 04 Jul 2021 00:03:20 +0800</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/codeforces-1542c/</guid>
+      <guid>https://93wilsonlu.github.io/post/codeforces/1542c/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -113,10 +113,10 @@
     
     <item>
       <title>Atcoder Beginner Contest 206E</title>
-      <link>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</link>
+      <link>https://93wilsonlu.github.io/post/atcoder/abc-206e/</link>
       <pubDate>Fri, 02 Jul 2021 23:25:22 +0800</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/atcoder-beginner-contest-206e/</guid>
+      <guid>https://93wilsonlu.github.io/post/atcoder/abc-206e/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -220,10 +220,10 @@
     
     <item>
       <title>Atcoder Beginner Contest 197F</title>
-      <link>https://93wilsonlu.github.io/post/atcoder-beginner-contest-197c/</link>
+      <link>https://93wilsonlu.github.io/post/atcoder/abc-197c/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/atcoder-beginner-contest-197c/</guid>
+      <guid>https://93wilsonlu.github.io/post/atcoder/abc-197c/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -300,10 +300,10 @@
     
     <item>
       <title>CSAcademy Partial Ladder Graph</title>
-      <link>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</link>
+      <link>https://93wilsonlu.github.io/post/csacademy/partial-ladder-graph/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/csacademy-partial-ladder-graph/</guid>
+      <guid>https://93wilsonlu.github.io/post/csacademy/partial-ladder-graph/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -345,10 +345,10 @@ O ── O ── ... ── O&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt
     
     <item>
       <title>CSAcademy Strange Distance</title>
-      <link>https://93wilsonlu.github.io/post/csacademy-strange-distance/</link>
+      <link>https://93wilsonlu.github.io/post/csacademy/strange-distance/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/csacademy-strange-distance/</guid>
+      <guid>https://93wilsonlu.github.io/post/csacademy/strange-distance/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -407,10 +407,10 @@ O ── O ── ... ── O&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt
     
     <item>
       <title>Keyence 2021C</title>
-      <link>https://93wilsonlu.github.io/post/keyence-2021c/</link>
+      <link>https://93wilsonlu.github.io/post/atcoder/keyence-2021c/</link>
       <pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/keyence-2021c/</guid>
+      <guid>https://93wilsonlu.github.io/post/atcoder/keyence-2021c/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -531,10 +531,10 @@ O ── O ── ... ── O&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt
     
     <item>
       <title>CSAcademy Perm Matrix</title>
-      <link>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</link>
+      <link>https://93wilsonlu.github.io/post/csacademy/perm-matrix/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/csacademy-perm-matrix/</guid>
+      <guid>https://93wilsonlu.github.io/post/csacademy/perm-matrix/</guid>
       
         <description>&lt;h1 id=&#34;題目&#34;&gt;題目&lt;/h1&gt;
 
@@ -572,10 +572,10 @@ O ── O ── ... ── O&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt
     
     <item>
       <title>Codeforces 1385E</title>
-      <link>https://93wilsonlu.github.io/post/codeforces-1385e/</link>
+      <link>https://93wilsonlu.github.io/post/codeforces/1385e/</link>
       <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/codeforces-1385e/</guid>
+      <guid>https://93wilsonlu.github.io/post/codeforces/1385e/</guid>
       
         <description>&lt;p&gt;給定一個有向和無向邊的圖，將無向邊定向並避免產生環，最後輸出圖。&lt;/p&gt;
 &lt;p&gt;拓樸排序，不考慮無向邊，排出點的順序後就能將邊定向了。&lt;/p&gt;
@@ -1099,10 +1099,10 @@ printf 看起來不能利用&lt;/li&gt;
     
     <item>
       <title>e325 基本題-小崴的IO優化挑戰</title>
-      <link>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</link>
+      <link>https://93wilsonlu.github.io/post/zerojudge/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://93wilsonlu.github.io/post/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
+      <guid>https://93wilsonlu.github.io/post/zerojudge/e325-%E5%9F%BA%E6%9C%AC%E9%A1%8C-%E5%B0%8F%E5%B4%B4%E7%9A%84io%E5%84%AA%E5%8C%96%E6%8C%91%E6%88%B0/</guid>
       
         <description>&lt;p&gt;先附上網址 &lt;a href=&#34;https://zerojudge.tw/ShowProblem?problemid=e295&#34;&gt;https://zerojudge.tw/ShowProblem?problemid=e295&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;題目簡單來說就是非常快的輸出 a+b&lt;/p&gt;
