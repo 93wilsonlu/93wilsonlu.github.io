@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="緣起每當住進飯店，洗澡時水龍頭都要調好幾秒，才能達到合適的溫度，手稍微往熱水一扳，就被燙得哇哇叫，調回來又覺得太冷。儘管我們知道溫度慢慢調是最好的，但它背後的原理是什麼呢。開始討論前，我們要先了解「系統」。 初探系統「系統」這個詞被用在許多場合，例如電腦有「作業系統」，汽車有「動力系統」，學測要考「物理系統」，我們身在一個「社會系統」，甚至人體也是一個系統。但是，系統到底是什麼？龐統地說，系統可表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初探系統動力學和延遲">
+<meta property="og:url" content="http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="緣起每當住進飯店，洗澡時水龍頭都要調好幾秒，才能達到合適的溫度，手稍微往熱水一扳，就被燙得哇哇叫，調回來又覺得太冷。儘管我們知道溫度慢慢調是最好的，但它背後的原理是什麼呢。開始討論前，我們要先了解「系統」。 初探系統「系統」這個詞被用在許多場合，例如電腦有「作業系統」，汽車有「動力系統」，學測要考「物理系統」，我們身在一個「社會系統」，甚至人體也是一個系統。但是，系統到底是什麼？龐統地說，系統可表">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.systems-thinking.org/intst/int01.gif">
+<meta property="og:image" content="https://www.systems-thinking.org/intst/int02.gif">
+<meta property="og:image" content="https://www.systems-thinking.org/intst/int06.gif">
+<meta property="og:image" content="https://www.systems-thinking.org/intst/int07.gif">
+<meta property="og:image" content="http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/water.png">
+<meta property="og:image" content="http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/no_delay.png">
+<meta property="og:image" content="http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/delay_turn_fast.png">
+<meta property="og:image" content="http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/delay_turn_slow.png">
+<meta property="article:published_time" content="2024-01-24T19:51:52.000Z">
+<meta property="article:modified_time" content="2024-01-25T13:16:29.544Z">
+<meta property="article:author" content="Wilson Lu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.systems-thinking.org/intst/int01.gif">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>初探系統動力學和延遲</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&text=初探系統動力學和延遲"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&is_video=false&description=初探系統動力學和延遲"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=初探系統動力學和延遲&body=Check out this article: http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&name=初探系統動力學和延遲&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&t=初探系統動力學和延遲"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B7%A3%E8%B5%B7"><span class="toc-number">1.</span> <span class="toc-text">緣起</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1"><span class="toc-number">2.</span> <span class="toc-text">初探系統</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B0%B4%E9%BE%8D%E9%A0%AD%E7%B3%BB%E7%B5%B1"><span class="toc-number">3.</span> <span class="toc-text">水龍頭系統</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="toc-number">4.</span> <span class="toc-text">參考資料</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        初探系統動力學和延遲
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Wilson Lu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-01-24T19:51:52.000Z" class="dt-published" itemprop="datePublished">2024-01-25</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a>緣起</h1><p>每當住進飯店，洗澡時水龍頭都要調好幾秒，才能達到合適的溫度，手稍微往熱水一扳，就被燙得哇哇叫，調回來又覺得太冷。<br>儘管我們知道溫度慢慢調是最好的，但它背後的原理是什麼呢。<br>開始討論前，我們要先了解「系統」。</p>
+<h1 id="初探系統"><a href="#初探系統" class="headerlink" title="初探系統"></a>初探系統</h1><p>「系統」這個詞被用在許多場合，例如電腦有「作業系統」，汽車有「動力系統」，學測要考「物理系統」，我們身在一個「社會系統」，甚至人體也是一個系統。但是，系統到底是什麼？<br>龐統地說，系統可表示為「事物間的關係與作用」，例如你手拿著 1kg 的物品，由於重力和正向力抵銷，物體靜止不動，這就是一個手、物體和地面組成的系統。當然，系統不單解釋實際物理狀態，也探求經濟、社會變化等議題。</p>
+<p>系統由三個要素組成：元素、關係和功能，例如人體中的紅血球，就是血液循環系統的元素，而紅血球與各細胞交換物質、心臟推動血液的速度就是它們的關係，而功能就是我們關注的目標，看你怎麼定，研究「如何達到血液最高流速」也是可以的。</p>
+<p>一般來說，元素被替換對系統不會造成太大影響，人的血液細胞每三個月換一次，我們還是活得好好的。而關係和功能就相當重要，若哪天紅血球不運送氧氣，人類就滅亡了。</p>
+<p>元素間的關係包括「正回饋」和「負回饋」，例如「收入 -&gt; 利潤」是正回饋，收入越多利潤越大，而「支出 -&gt; 利潤」是負回饋，它們增減是反向的。<br><img src="https://www.systems-thinking.org/intst/int01.gif" alt="正回饋"></p>
+<p><img src="https://www.systems-thinking.org/intst/int02.gif" alt="負回饋"></p>
+<p>多個回饋合起來，便可形成「增強迴路」和「調節迴路」。</p>
+<p><img src="https://www.systems-thinking.org/intst/int06.gif" alt="增強迴路"></p>
+<p><img src="https://www.systems-thinking.org/intst/int07.gif" alt="調節迴路"></p>
+<p>透過分析複雜迴路，我們可以探求事物間的關係。</p>
+<h1 id="水龍頭系統"><a href="#水龍頭系統" class="headerlink" title="水龍頭系統"></a>水龍頭系統</h1><p>（這裡我用《系統之美》的畫法，左邊流入右邊流出，兩者都有控制閥門，看不懂自己找書，我懶得寫了）<br><img src="/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/water.png"></p>
+<p>假設水溫調節和溫差關係如下：<br>$$<br>\frac{dT}{dt}&#x3D;a(T_1-T)<br>$$</p>
+<ul>
+<li>$T$: 水溫</li>
+<li>$t$: 時間</li>
+<li>$a$: 調水溫的幅度</li>
+<li>$T_0$: 當前溫度</li>
+<li>$T_1$: 理想溫度</li>
+</ul>
+<p>解微分方程：<br>$$<br>\begin{align*}<br>&amp;\frac{dT}{dt}&#x3D;a(T_1-T)\\<br>&amp;\Rightarrow T’+aT&#x3D;aT_1\\<br>&amp;\Rightarrow e^{at}T’+e^{at}aT&#x3D;e^{at}aT_1\\<br>&amp;\Rightarrow (e^{at}T)’&#x3D;e^{at}aT_1\\<br>&amp;\Rightarrow e^{at}T&#x3D;\int e^{at}aT_1\,dt&#x3D;\frac{aT_1}{a}e^{at}+C\\<br>&amp;\Rightarrow T&#x3D;T_1+Ce^{-at}\\<br>\end{align*}<br>$$<br>由於 $T(0)&#x3D;T_0$<br>$$<br>T&#x3D;T_1+(T_0-T_1)e^{-at}<br>$$<br>圖形長這樣：<br><img src="/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/no_delay.png"></p>
+<p>看起來溫度不會上下震盪？<br>在這個例子，我們假設調節幅度即時反應到溫度，實際上，熱水要過一段時間才能送達，因此式子要改。<br>$$<br>\begin{align*}<br>&amp;T(t)&#x3D;T_0\text{   for   }t\in[-d, 0]\\<br>&amp;\frac{dT}{dt}&#x3D;a(T_1-T(t-d))<br>\end{align*}<br>$$</p>
+<ul>
+<li>$T$: 水溫</li>
+<li>$t$: 時間</li>
+<li>$a$: 調水溫的幅度</li>
+<li>$T_0$: 當前溫度</li>
+<li>$T_1$: 理想溫度</li>
+<li>$d$: 熱水延遲時間</li>
+</ul>
+<p>當下調整水龍頭，要經過 d 秒才能作用，因此 t 秒時斜率取決於 t-d 秒的溫度。<br>延遲微分方程必須一段一段算。</p>
+<p>對於 $t\in[0, d]$：<br>$$<br>\begin{align*}<br>&amp;\frac{dT}{dt}&#x3D;a(T_1-T(t-d))\\<br>&amp;\Rightarrow T(t)&#x3D;T(0)+\int^t_0a(T_1-T(s-d))\,ds\\<br>&amp;\Rightarrow T(t)&#x3D;T(0)+\int^t_0a(T_1-T_0)\,ds\\<br>&amp;\Rightarrow T(t)&#x3D;T_0+a(T_1-T_0)t\\<br>\end{align*}<br>$$</p>
+<p>對於 $t\in[d, 2d]$：<br>$$<br>\begin{align*}<br>&amp;\frac{dT}{dt}&#x3D;a(T_1-T(t-d))\\<br>&amp;\Rightarrow T(t)&#x3D;T(d)+\int^t_da(T_1-T(s-d))\,ds\\<br>&amp;\Rightarrow T(t)&#x3D;T(d)+\int^t_da(T_1-(T_0+a(T_1-T_0)(s-d)))\,ds\\<br>&amp;\Rightarrow T(t)&#x3D;T(d)+[a(T_1-T_0)s-\frac 12a^2(T_1-T_0)(s-d)^2]\Big|^t_d\\<br>&amp;\Rightarrow T(t)&#x3D;T_0+a(T_1-T_0)d+a(T_1-T_0)t-\frac 12a^2(T_1-T_0)(t-d)^2-a(T_1-T_0)d\\<br>&amp;\Rightarrow T(t)&#x3D;T_0+a(T_1-T_0)[t-\frac 12a(t-d)^2]\\<br>\end{align*}<br>$$</p>
+<p>算到後來，得出所有 $T$。<br>$$<br>T(t)&#x3D;T_0+a(T_1-T_0)\sum^n_{k&#x3D;1}\frac{(-a)^{k-1}[t-(k-1)d]^k}{k!}<br>$$</p>
+<p>假設 $a&#x3D;1.2$，圖形震盪幅度大。<br><img src="/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/delay_turn_fast.png"></p>
+<p>若 $a$ 調低，震盪幅度小。<br><img src="/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/delay_turn_slow.png"></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.books.com.tw/products/CN10946768">系統之美：決策者的系統思考</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/System_dynamics">System dynamics</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.books.com.tw/products/CN11457748">躍遷：成為高手的技術</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B7%A3%E8%B5%B7"><span class="toc-number">1.</span> <span class="toc-text">緣起</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1"><span class="toc-number">2.</span> <span class="toc-text">初探系統</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B0%B4%E9%BE%8D%E9%A0%AD%E7%B3%BB%E7%B5%B1"><span class="toc-number">3.</span> <span class="toc-text">水龍頭系統</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="toc-number">4.</span> <span class="toc-text">參考資料</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&text=初探系統動力學和延遲"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&is_video=false&description=初探系統動力學和延遲"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=初探系統動力學和延遲&body=Check out this article: http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&title=初探系統動力學和延遲"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&name=初探系統動力學和延遲&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/%E5%88%9D%E6%8E%A2%E7%B3%BB%E7%B5%B1%E5%8B%95%E5%8A%9B%E5%AD%B8%E5%92%8C%E5%BB%B6%E9%81%B2/&t=初探系統動力學和延遲"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Wilson Lu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
