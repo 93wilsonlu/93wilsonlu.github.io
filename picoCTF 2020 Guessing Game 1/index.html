@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="這題目花了我好幾個小時 https:&#x2F;&#x2F;play.picoctf.org&#x2F;events&#x2F;3&#x2F;challenges&#x2F;challenge&#x2F;90 開始我們先看看 Makefile 1234all:  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.cclean:  rm vuln  這個程式可能有 Buffer Overf">
+    <meta name="description" content="這題目花了我好幾個小時 https:&#x2F;&#x2F;play.picoctf.org&#x2F;events&#x2F;3&#x2F;challenges&#x2F;challenge&#x2F;90 開始我們先看看 Makefile 1234all:  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.cclean:  rm vuln  這個程式可能有 Buffer Overflo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="picoCTF 2020 Guessing Game 1">
 <meta property="og:url" content="http://example.com/picoCTF%202020%20Guessing%20Game%201/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="這題目花了我好幾個小時 https:&#x2F;&#x2F;play.picoctf.org&#x2F;events&#x2F;3&#x2F;challenges&#x2F;challenge&#x2F;90 開始我們先看看 Makefile 1234all:  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.cclean:  rm vuln  這個程式可能有 Buffer Overf">
+<meta property="og:description" content="這題目花了我好幾個小時 https:&#x2F;&#x2F;play.picoctf.org&#x2F;events&#x2F;3&#x2F;challenges&#x2F;challenge&#x2F;90 開始我們先看看 Makefile 1234all:  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.cclean:  rm vuln  這個程式可能有 Buffer Overflo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-25T13:32:35.211Z">
+<meta property="article:modified_time" content="2024-01-25T13:42:31.386Z">
 <meta property="article:author" content="Wilson Lu">
-<meta property="article:tag" content="CTF">
 <meta property="article:tag" content="PicoCTF">
+<meta property="article:tag" content="CTF">
 <meta property="article:tag" content="Pwn">
 <meta name="twitter:card" content="summary">
     
@@ -175,9 +175,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <span id="more"></span>
-
-<p>這題目花了我好幾個小時</p>
+    <p>這題目花了我好幾個小時</p>
 <p><a target="_blank" rel="noopener" href="https://play.picoctf.org/events/3/challenges/challenge/90">https://play.picoctf.org/events/3/challenges/challenge/90</a></p>
 <h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><p>我們先看看 Makefile</p>
 <figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">all:</span></span><br><span class="line">  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">  rm vuln</span><br></pre></td></tr></table></figure>
