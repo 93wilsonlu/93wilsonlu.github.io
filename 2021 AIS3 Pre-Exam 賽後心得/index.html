@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="題目Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi打密碼，一旦打錯就會 Lock 掉。我是直接手打，最多也就試 120 次，好像可以用 pwntools，只是不知道怎麼處理不是純文字的情況。 Microchip題目是每四個字元為一組做加密，flag 格式是 AIS3&#123;...&#125; 可反推 key。 Blind題目會先給一個 syscall 再把 STDOUT_FIL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021 AIS3 Pre-Exam 賽後心得">
+<meta property="og:url" content="http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="題目Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi打密碼，一旦打錯就會 Lock 掉。我是直接手打，最多也就試 120 次，好像可以用 pwntools，只是不知道怎麼處理不是純文字的情況。 Microchip題目是每四個字元為一組做加密，flag 格式是 AIS3&#123;...&#125; 可反推 key。 Blind題目會先給一個 syscall 再把 STDOUT_FIL">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-25T13:34:54.132Z">
+<meta property="article:author" content="Wilson Lu">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="AIS3 Pre-Exam">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>2021 AIS3 Pre-Exam 賽後心得</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2022%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/picoCTF%202020%20Guessing%20Game%201/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&text=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&is_video=false&description=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2021 AIS3 Pre-Exam 賽後心得&body=Check out this article: http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&name=2021 AIS3 Pre-Exam 賽後心得&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&t=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">題目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cat-Slayer-%E1%B6%A0%E1%B5%83%E1%B5%8F%E1%B5%89-Nekogoroshi"><span class="toc-number">1.1.</span> <span class="toc-text">Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Microchip"><span class="toc-number">1.2.</span> <span class="toc-text">Microchip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blind"><span class="toc-number">1.3.</span> <span class="toc-text">Blind</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Microcheese"><span class="toc-number">1.4.</span> <span class="toc-text">Microcheese</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%83%E5%BE%97"><span class="toc-number">2.</span> <span class="toc-text">心得</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        2021 AIS3 Pre-Exam 賽後心得
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Wilson Lu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-23T16:00:00.000Z" class="dt-published" itemprop="datePublished">2021-05-24</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/AIS3-Pre-Exam/">AIS3 Pre-Exam</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/AIS3-Pre-Exam/" rel="tag">AIS3 Pre-Exam</a>, <a class="p-category" href="/tags/CTF/" rel="tag">CTF</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <span id="more"></span>
+
+<h1 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h1><h2 id="Cat-Slayer-ᶠᵃᵏᵉ-Nekogoroshi"><a href="#Cat-Slayer-ᶠᵃᵏᵉ-Nekogoroshi" class="headerlink" title="Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi"></a>Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi</h2><p>打密碼，一旦打錯就會 Lock 掉。<br>我是直接手打，最多也就試 120 次，好像可以用 <code>pwntools</code>，只是不知道怎麼處理不是純文字的情況。</p>
+<h2 id="Microchip"><a href="#Microchip" class="headerlink" title="Microchip"></a>Microchip</h2><p>題目是每四個字元為一組做加密，flag 格式是 <code>AIS3&#123;...&#125;</code> 可反推 key。</p>
+<h2 id="Blind"><a href="#Blind" class="headerlink" title="Blind"></a>Blind</h2><p>題目會先給一個 syscall 再把 STDOUT_FILENO 關掉，最後呼叫 sh。<br>我們沒辦法阻止 <code>close(1)</code> 運行，那要怎麼辦呢?</p>
+<p>應該很多人知道 bash 中 <code>&gt;</code> 代表把資料寫到檔案，而 <code>2&gt;</code> 則是把錯誤訊息寫到檔案。</p>
+<p>這種技巧可以套用到這題，在 <a target="_blank" rel="noopener" href="https://w3challs.com/syscalls/?arch=x86_64">syscall</a> 表可以找到 <code>dup2</code> 函數，它的作用是將對 <code>new_fd</code> 操作導到 <code>old_fd</code>，也就是說，<code>write(new_fd, buf, sizeof(buf));</code> 等同於 <code>write(old_fd, buf, sizeof(buf));</code>。</p>
+<p>在 syscall 參數填入 33 2 1 0 (0x21 STDERR_FILENO STDOUT_FILENO any) 就可以拿到 flag。</p>
+<h2 id="Microcheese"><a href="#Microcheese" class="headerlink" title="Microcheese"></a>Microcheese</h2><p><strong>遊戲規則:</strong><br>有很多堆石子，每回合玩家可以選某一堆拿走一些石子，當玩家沒有任何石子可以拿的時候就輸了。<br>只要打敗 AI 就可以拿到 flag，但此遊戲被設計為 AI 一定能贏(具體算法我也不清楚)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">play</span>(<span class="params">game: Game</span>):</span><br><span class="line">    ai_player = AIPlayer()</span><br><span class="line">    win = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> game.ended():</span><br><span class="line">        game.show()</span><br><span class="line">        print_game_menu()</span><br><span class="line">        choice = <span class="built_in">input</span>(<span class="string">&#x27;it\&#x27;s your turn to move! what do you choose? &#x27;</span>).strip()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> choice == <span class="string">&#x27;0&#x27;</span>:</span><br><span class="line">            pile = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;which pile do you choose? &#x27;</span>))</span><br><span class="line">            count = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;how many stones do you remove? &#x27;</span>))</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> game.make_move(pile, count):</span><br><span class="line">                print_error(<span class="string">&#x27;that is not a valid move!&#x27;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> choice == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">            game_str = game.save()</span><br><span class="line">            digest = <span class="built_in">hash</span>.hexdigest(game_str.encode())</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;you game has been saved! here is your saved game:&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(game_str + <span class="string">&#x27;:&#x27;</span> + digest)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> choice == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># no move -&gt; player wins!</span></span><br><span class="line">        <span class="keyword">if</span> game.ended():</span><br><span class="line">            win = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print_move(<span class="string">&#x27;you&#x27;</span>, count, pile)</span><br><span class="line">            game.show()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># the AI plays a move</span></span><br><span class="line">        pile, count = ai_player.get_move(game)</span><br><span class="line">        <span class="keyword">assert</span> game.make_move(pile, count)</span><br><span class="line">        print_move(<span class="string">&#x27;i&#x27;</span>, count, pile)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> win:</span><br><span class="line">        print_flag(flag)</span><br><span class="line">        exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print_lose()</span><br></pre></td></tr></table></figure>
+<p><code>server.py</code> 中 <code>play()</code> 沒有處理 <code>choice</code> 等於其他數值的情況，後面的程式還是會被執行。</p>
+<p>因此如果一直按 <code>3</code> 就變成 AI 在跟自己玩，我們可以按到剩一堆石子再拿它。</p>
+<p>第一次操作的時候必須先隨便拿一顆石子，不然 <code>print_move(&#39;you&#39;, count, pile)</code> 的時候 <code>count</code> 和 <code>pile</code> 還沒被定義。</p>
+<h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>開始之前我原本想說也許可以寫三題 Pwn 兩題 Web，Misc 就盡量 google，Reverse 和 Crypto 做到簡單題就好了。<br>結果在賽中完全被打敗，跟去年題目不是同一個等級。</p>
+<p>我打 Write Me 時有買 hint，它只有寫”懶惰綁定”四個字，執行檔叫 gotplt 就算不懂的人也會去查吧。不能改 plt 而且改 got 會被蓋到我也沒有解出來。</p>
+<p>晚上睡覺還會夢見自己在看 Wireshark。</p>
+<p>還是有許多很厲害或我之前忽略的題目，例如 Yet Another Login Page 沒有想到利用 json 做 injection，明明有想過 None 等於什麼是 True，就差一點點…</p>
+<p>官網說共錄取 150 人備取 30 人，但過去好幾年都超過著個數字，不知道能不能上，臨時抱佛腳沒上也不意外就是了。</p>
+<p>很棒的比賽，不管看考古或今年都能發現很多有趣的新事物。</p>
+<p>明年再加油吧!</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">題目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cat-Slayer-%E1%B6%A0%E1%B5%83%E1%B5%8F%E1%B5%89-Nekogoroshi"><span class="toc-number">1.1.</span> <span class="toc-text">Cat Slayer ᶠᵃᵏᵉ | Nekogoroshi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Microchip"><span class="toc-number">1.2.</span> <span class="toc-text">Microchip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blind"><span class="toc-number">1.3.</span> <span class="toc-text">Blind</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Microcheese"><span class="toc-number">1.4.</span> <span class="toc-text">Microcheese</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%83%E5%BE%97"><span class="toc-number">2.</span> <span class="toc-text">心得</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&text=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&is_video=false&description=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2021 AIS3 Pre-Exam 賽後心得&body=Check out this article: http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&title=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&name=2021 AIS3 Pre-Exam 賽後心得&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/&t=2021 AIS3 Pre-Exam 賽後心得"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Wilson Lu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

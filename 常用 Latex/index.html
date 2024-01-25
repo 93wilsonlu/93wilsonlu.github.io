@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="這裡列出了一些常用 Latex 技巧 放上一個範例 $$v&#x3D;v_0+at$$ $$x&#x3D;x_0+v_0t+\dfrac{1}{2}at^2$$ $$v^2&#x3D;v_0^2+2a(x-x_0)$$ 附加符號   代碼 顯示結果 代碼 顯示結果    x_0 $$x_0$$ x^2 $$x^2$$   \dfrac&#123;1&#125;&#123;x&#125; $$\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用 Latex">
+<meta property="og:url" content="http://example.com/%E5%B8%B8%E7%94%A8%20Latex/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="這裡列出了一些常用 Latex 技巧 放上一個範例 $$v&#x3D;v_0+at$$ $$x&#x3D;x_0+v_0t+\dfrac{1}{2}at^2$$ $$v^2&#x3D;v_0^2+2a(x-x_0)$$ 附加符號   代碼 顯示結果 代碼 顯示結果    x_0 $$x_0$$ x^2 $$x^2$$   \dfrac&#123;1&#125;&#123;x&#125; $$\">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-24T14:11:03.783Z">
+<meta property="article:author" content="Wilson Lu">
+<meta property="article:tag" content="Latex">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>常用 Latex</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/picoCTF%202020%20Guessing%20Game%201/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&text=常用 Latex"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&is_video=false&description=常用 Latex"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=常用 Latex&body=Check out this article: http://example.com/%E5%B8%B8%E7%94%A8%20Latex/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&name=常用 Latex&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&t=常用 Latex"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E7%AC%A6%E8%99%9F"><span class="toc-number">1.</span> <span class="toc-text">附加符號</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%AC%A6%E8%99%9F"><span class="toc-number">2.</span> <span class="toc-text">特殊符號</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8B%E7%AE%97"><span class="toc-number">3.</span> <span class="toc-text">運算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%9C%E4%BF%82"><span class="toc-number">4.</span> <span class="toc-text">關係</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        常用 Latex
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Wilson Lu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-03-24T16:00:00.000Z" class="dt-published" itemprop="datePublished">2020-03-25</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/Markdown/">Markdown</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Latex/" rel="tag">Latex</a>, <a class="p-category" href="/tags/Markdown/" rel="tag">Markdown</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <span id="more"></span>
+
+<p>這裡列出了一些常用 Latex 技巧</p>
+<p>放上一個範例</p>
+<p>$$<br>v&#x3D;v_0+at<br>$$</p>
+<p>$$<br>x&#x3D;x_0+v_0t+\dfrac{1}{2}at^2<br>$$</p>
+<p>$$<br>v^2&#x3D;v_0^2+2a(x-x_0)<br>$$</p>
+<h2 id="附加符號"><a href="#附加符號" class="headerlink" title="附加符號"></a>附加符號</h2><table>
+<thead>
+<tr>
+<th>代碼</th>
+<th>顯示結果</th>
+<th>代碼</th>
+<th>顯示結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x_0</code></td>
+<td>$$x_0$$</td>
+<td><code>x^2</code></td>
+<td>$$x^2$$</td>
+</tr>
+<tr>
+<td><code>\dfrac&#123;1&#125;&#123;x&#125;</code></td>
+<td>$$\dfrac{1}{x}$$</td>
+<td><code>\tfrac&#123;1&#125;&#123;x&#125;</code></td>
+<td>$$\tfrac{1}{x}$$</td>
+</tr>
+<tr>
+<td><code>\sqrt&#123;2&#125;</code></td>
+<td>$$\sqrt{x}$$</td>
+<td><code>\sqrt[y]&#123;x&#125;</code></td>
+<td>$$\sqrt[y]{x}$$</td>
+</tr>
+<tr>
+<td><code>\vec&#123;x&#125;</code></td>
+<td>$$\vec{x}$$</td>
+<td><code>\hat&#123;x&#125;</code></td>
+<td>$$\hat{x}$$</td>
+</tr>
+<tr>
+<td><code>\ddot&#123;x&#125;</code></td>
+<td>$$\ddot{x}$$</td>
+<td><code>\dot&#123;x&#125;</code></td>
+<td>$$\dot{x}$$</td>
+</tr>
+<tr>
+<td><code>60^\omicron</code></td>
+<td>$$60^\omicron$$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="特殊符號"><a href="#特殊符號" class="headerlink" title="特殊符號"></a>特殊符號</h2><table>
+<thead>
+<tr>
+<th>代碼</th>
+<th>顯示結果</th>
+<th>代碼</th>
+<th>顯示結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\Delta</code></td>
+<td>$$\Delta$$</td>
+<td><code>\delta</code></td>
+<td>$$\delta$$</td>
+</tr>
+<tr>
+<td><code>\theta</code></td>
+<td>$$\theta$$</td>
+<td><code>\omega</code></td>
+<td>$$\omega$$</td>
+</tr>
+<tr>
+<td><code>\pi</code></td>
+<td>$$\pi$$</td>
+<td><code>\alpha</code></td>
+<td>$$\alpha$$</td>
+</tr>
+<tr>
+<td><code>\beta</code></td>
+<td>$$\beta$$</td>
+<td><code>\gamma</code></td>
+<td>$$\gamma$$</td>
+</tr>
+<tr>
+<td><code>\ </code></td>
+<td>$$\ $$</td>
+<td><code>\%</code></td>
+<td>$$\%$$</td>
+</tr>
+<tr>
+<td><code>\infty</code></td>
+<td>$$\infty$$</td>
+<td><code>\ldots</code></td>
+<td>$$\ldots$$</td>
+</tr>
+</tbody></table>
+<h2 id="運算"><a href="#運算" class="headerlink" title="運算"></a>運算</h2><table>
+<thead>
+<tr>
+<th>代碼</th>
+<th>顯示結果</th>
+<th>代碼</th>
+<th>顯示結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\sin x</code></td>
+<td>$$\sin x$$</td>
+<td><code>\lim_&#123;x\to 0&#125;</code></td>
+<td>$$\lim_{x\to 0}$$</td>
+</tr>
+<tr>
+<td><code>\log_y x</code></td>
+<td>$$log_y x$$</td>
+<td><code>\times</code></td>
+<td>$$\times$$</td>
+</tr>
+<tr>
+<td><code>\div</code></td>
+<td>$$\div$$</td>
+<td><code>\bullet</code></td>
+<td>$$\bullet$$</td>
+</tr>
+<tr>
+<td><code>\sum_&#123;i=1&#125;^n a_i</code></td>
+<td>$$\sum_{i&#x3D;1}^n a_i$$</td>
+<td><code>\int_&#123;a&#125;^&#123;b&#125; 2x\ dx</code></td>
+<td>$$\int_{a}^{b} 2x\ dx$$</td>
+</tr>
+</tbody></table>
+<h2 id="關係"><a href="#關係" class="headerlink" title="關係"></a>關係</h2><table>
+<thead>
+<tr>
+<th>代碼</th>
+<th>顯示結果</th>
+<th>代碼</th>
+<th>顯示結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>=</code></td>
+<td>$$&#x3D;$$</td>
+<td><code>\ne</code></td>
+<td>$$\ne$$</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>$$&gt;$$</td>
+<td><code>&lt;</code></td>
+<td>$$&lt;$$</td>
+</tr>
+<tr>
+<td><code>\ge</code></td>
+<td>$$\ge$$</td>
+<td><code>\leq</code></td>
+<td>$$\leq$$</td>
+</tr>
+<tr>
+<td><code>\approx</code></td>
+<td>$$\approx$$</td>
+<td><code>\equiv</code></td>
+<td>$$\equiv$$</td>
+</tr>
+<tr>
+<td><code>\pmod&#123;m&#125;</code></td>
+<td>$$\pmod{m}$$</td>
+<td><code>a \bmod b</code></td>
+<td>$$a \bmod b$$</td>
+</tr>
+<tr>
+<td><code>\in</code></td>
+<td>$$\in$$</td>
+<td><code>\subset</code></td>
+<td>$$\subset$$</td>
+</tr>
+<tr>
+<td><code>\because</code></td>
+<td>$$\because$$</td>
+<td><code>\therefore</code></td>
+<td>$$\therefore$$</td>
+</tr>
+<tr>
+<td><code>\rightharpoonup</code></td>
+<td>$$\rightharpoonup$$</td>
+<td><code>\leftharpoondown</code></td>
+<td>$$\leftharpoondown$$</td>
+</tr>
+<tr>
+<td><code>\Rightarrow</code></td>
+<td>$$ \Rightarrow$$</td>
+<td><code>\Leftrightarrow</code></td>
+<td>$$\Leftrightarrow$$</td>
+</tr>
+<tr>
+<td><code>\propto</code></td>
+<td>$$\propto$$</td>
+<td><code>\perp</code></td>
+<td>$$\perp$$</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>代碼</th>
+<th>顯示結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\begin&#123;cases&#125;x=2y\\x+y=6\end&#123;cases&#125;</code></td>
+<td>$$\begin{cases}x&#x3D;2y \\ x+y&#x3D;6\end{cases}$$</td>
+</tr>
+<tr>
+<td><code>\underbrace&#123;a_1+\ldots+a_n&#125; \\ n</code></td>
+<td>$$\underbrace{a_1+\ldots+a_n} \\ n$$</td>
+</tr>
+</tbody></table>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E7%AC%A6%E8%99%9F"><span class="toc-number">1.</span> <span class="toc-text">附加符號</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%AC%A6%E8%99%9F"><span class="toc-number">2.</span> <span class="toc-text">特殊符號</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8B%E7%AE%97"><span class="toc-number">3.</span> <span class="toc-text">運算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%9C%E4%BF%82"><span class="toc-number">4.</span> <span class="toc-text">關係</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&text=常用 Latex"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&is_video=false&description=常用 Latex"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=常用 Latex&body=Check out this article: http://example.com/%E5%B8%B8%E7%94%A8%20Latex/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&title=常用 Latex"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&name=常用 Latex&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/%E5%B8%B8%E7%94%A8%20Latex/&t=常用 Latex"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Wilson Lu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
